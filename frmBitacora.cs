@@ -10,6 +10,7 @@ namespace EnviosExpress
         public frmBitacora()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void frmBitacora_Load(object sender, EventArgs e)

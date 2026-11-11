@@ -14,6 +14,7 @@ namespace EnviosExpress
         public frmUsuarios()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)

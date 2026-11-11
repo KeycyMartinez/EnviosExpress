@@ -27,6 +27,7 @@ namespace EnviosExpress
         public frmEnvios()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void frmEnvios_Load(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace EnviosExpress
             dgv.AllowUserToDeleteRows = false;
             dgv.MultiSelect = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void ConfigurarNumericos()

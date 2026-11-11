@@ -16,6 +16,7 @@ namespace EnviosExpress
         public frmLogin()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -84,13 +85,24 @@ namespace EnviosExpress
                 BitacoraBD.Registrar("Login", null, "Inicio de sesión");
 
                 this.Hide();
+                bool volverAlLogin;
                 using (frmMenuPrincipal menu = new frmMenuPrincipal())
                 {
                     menu.ShowDialog();   // el login espera aquí hasta que se cierre el menú
+                    volverAlLogin = menu.VolverAlLogin;
                 }
 
-                // Al cerrar el menú, también se cierra el login oculto y termina la aplicación.
-                this.Close();
+                if (volverAlLogin)
+                {
+                    txtUsuario.Clear();
+                    txtPassword.Clear();
+                    txtUsuario.Focus();
+                    this.Show();
+                }
+                else
+                {
+                    this.Close();
+                }
             }
         }
     }

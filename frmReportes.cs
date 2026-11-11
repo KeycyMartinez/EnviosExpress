@@ -10,6 +10,7 @@ namespace EnviosExpress
         public frmReportes()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void frmReportes_Load(object sender, EventArgs e)

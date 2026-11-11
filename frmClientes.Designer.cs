@@ -84,7 +84,7 @@
             this.tabClientes.Location = new System.Drawing.Point(22, 12);
             this.tabClientes.Name = "tabClientes";
             this.tabClientes.SelectedIndex = 0;
-            this.tabClientes.Size = new System.Drawing.Size(756, 390);
+            this.tabClientes.Size = new System.Drawing.Size(1056, 390);
             this.tabClientes.TabIndex = 0;
             this.tabClientes.SelectedIndexChanged += new System.EventHandler(this.tabClientes_SelectedIndexChanged);
             // 
@@ -113,7 +113,7 @@
             this.tabRemitentes.Location = new System.Drawing.Point(4, 22);
             this.tabRemitentes.Name = "tabRemitentes";
             this.tabRemitentes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRemitentes.Size = new System.Drawing.Size(748, 364);
+            this.tabRemitentes.Size = new System.Drawing.Size(1048, 364);
             this.tabRemitentes.TabIndex = 0;
             this.tabRemitentes.Text = "Remitentes";
             this.tabRemitentes.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             this.dgvRemitentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRemitentes.Location = new System.Drawing.Point(390, 72);
             this.dgvRemitentes.Name = "dgvRemitentes";
-            this.dgvRemitentes.Size = new System.Drawing.Size(335, 266);
+            this.dgvRemitentes.Size = new System.Drawing.Size(630, 266);
             this.dgvRemitentes.TabIndex = 0;
             this.dgvRemitentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRemitentes_CellClick);
             // 
@@ -316,7 +316,7 @@
             this.tabDestinatarios.Location = new System.Drawing.Point(4, 22);
             this.tabDestinatarios.Name = "tabDestinatarios";
             this.tabDestinatarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDestinatarios.Size = new System.Drawing.Size(748, 364);
+            this.tabDestinatarios.Size = new System.Drawing.Size(1048, 364);
             this.tabDestinatarios.TabIndex = 1;
             this.tabDestinatarios.Text = "Destinatarios";
             this.tabDestinatarios.UseVisualStyleBackColor = true;
@@ -477,13 +477,13 @@
             this.dgvDestinatarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDestinatarios.Location = new System.Drawing.Point(404, 50);
             this.dgvDestinatarios.Name = "dgvDestinatarios";
-            this.dgvDestinatarios.Size = new System.Drawing.Size(321, 258);
+            this.dgvDestinatarios.Size = new System.Drawing.Size(616, 258);
             this.dgvDestinatarios.TabIndex = 0;
             this.dgvDestinatarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDestinatarios_CellClick);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(657, 408);
+            this.btnVolver.Location = new System.Drawing.Point(957, 408);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(94, 30);
             this.btnVolver.TabIndex = 1;
@@ -495,7 +495,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientSize = new System.Drawing.Size(1100, 450);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tabClientes);
             this.Name = "frmClientes";

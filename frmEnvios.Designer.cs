@@ -88,7 +88,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(28, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(740, 373);
+            this.groupBox2.Size = new System.Drawing.Size(1020, 373);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Envíos registrados";
@@ -98,7 +98,7 @@
             this.dgvEnvios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEnvios.Location = new System.Drawing.Point(23, 77);
             this.dgvEnvios.Name = "dgvEnvios";
-            this.dgvEnvios.Size = new System.Drawing.Size(376, 276);
+            this.dgvEnvios.Size = new System.Drawing.Size(839, 249);
             this.dgvEnvios.TabIndex = 3;
             this.dgvEnvios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnvios_CellClick);
             // 
@@ -116,7 +116,7 @@
             // 
             this.txtEnvBuscar.Location = new System.Drawing.Point(69, 39);
             this.txtEnvBuscar.Name = "txtEnvBuscar";
-            this.txtEnvBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtEnvBuscar.Size = new System.Drawing.Size(100, 25);
             this.txtEnvBuscar.TabIndex = 1;
             this.txtEnvBuscar.TextChanged += new System.EventHandler(this.txtEnvBuscar_TextChanged);
             // 
@@ -125,13 +125,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(52, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar:";
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(793, 476);
+            this.btnVolver.Location = new System.Drawing.Point(1000, 476);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 21;
@@ -146,7 +146,7 @@
             this.tabEnvios.Location = new System.Drawing.Point(12, 12);
             this.tabEnvios.Name = "tabEnvios";
             this.tabEnvios.SelectedIndex = 0;
-            this.tabEnvios.Size = new System.Drawing.Size(860, 429);
+            this.tabEnvios.Size = new System.Drawing.Size(1060, 429);
             this.tabEnvios.TabIndex = 22;
             // 
             // tabNuevoEnvio
@@ -155,10 +155,10 @@
             this.tabNuevoEnvio.Controls.Add(this.groupBox1);
             this.tabNuevoEnvio.Controls.Add(this.btnLimpiarEnvio);
             this.tabNuevoEnvio.Controls.Add(this.groupBox4);
-            this.tabNuevoEnvio.Location = new System.Drawing.Point(4, 22);
+            this.tabNuevoEnvio.Location = new System.Drawing.Point(4, 26);
             this.tabNuevoEnvio.Name = "tabNuevoEnvio";
             this.tabNuevoEnvio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNuevoEnvio.Size = new System.Drawing.Size(852, 403);
+            this.tabNuevoEnvio.Size = new System.Drawing.Size(1052, 399);
             this.tabNuevoEnvio.TabIndex = 0;
             this.tabNuevoEnvio.Text = "Nuevo envío";
             this.tabNuevoEnvio.UseVisualStyleBackColor = true;
@@ -204,9 +204,11 @@
             // 
             // dgvPaquetes
             // 
+            this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaquetes.Location = new System.Drawing.Point(18, 183);
             this.dgvPaquetes.Name = "dgvPaquetes";
+            this.dgvPaquetes.RowHeadersVisible = false;
             this.dgvPaquetes.Size = new System.Drawing.Size(348, 127);
             this.dgvPaquetes.TabIndex = 8;
             // 
@@ -227,7 +229,7 @@
             this.chkPaqFragil.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkPaqFragil.Location = new System.Drawing.Point(247, 105);
             this.chkPaqFragil.Name = "chkPaqFragil";
-            this.chkPaqFragil.Size = new System.Drawing.Size(51, 17);
+            this.chkPaqFragil.Size = new System.Drawing.Size(61, 23);
             this.chkPaqFragil.TabIndex = 6;
             this.chkPaqFragil.Text = "Frágil";
             this.chkPaqFragil.UseVisualStyleBackColor = true;
@@ -236,21 +238,21 @@
             // 
             this.nudPaqValor.Location = new System.Drawing.Point(87, 103);
             this.nudPaqValor.Name = "nudPaqValor";
-            this.nudPaqValor.Size = new System.Drawing.Size(120, 20);
+            this.nudPaqValor.Size = new System.Drawing.Size(120, 25);
             this.nudPaqValor.TabIndex = 5;
             // 
             // nudPaqPeso
             // 
             this.nudPaqPeso.Location = new System.Drawing.Point(87, 66);
             this.nudPaqPeso.Name = "nudPaqPeso";
-            this.nudPaqPeso.Size = new System.Drawing.Size(120, 20);
+            this.nudPaqPeso.Size = new System.Drawing.Size(120, 25);
             this.nudPaqPeso.TabIndex = 4;
             // 
             // txtPaqDescripcion
             // 
             this.txtPaqDescripcion.Location = new System.Drawing.Point(87, 30);
             this.txtPaqDescripcion.Name = "txtPaqDescripcion";
-            this.txtPaqDescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtPaqDescripcion.Size = new System.Drawing.Size(100, 25);
             this.txtPaqDescripcion.TabIndex = 3;
             // 
             // label4
@@ -258,7 +260,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(15, 103);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(43, 19);
             this.label4.TabIndex = 2;
             this.label4.Text = "Valor:";
             // 
@@ -267,7 +269,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(40, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Peso:";
             // 
@@ -276,7 +278,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(82, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Descripción:";
             // 
@@ -320,7 +322,7 @@
             this.lblCostoEnvio.AutoSize = true;
             this.lblCostoEnvio.Location = new System.Drawing.Point(193, 246);
             this.lblCostoEnvio.Name = "lblCostoEnvio";
-            this.lblCostoEnvio.Size = new System.Drawing.Size(83, 13);
+            this.lblCostoEnvio.Size = new System.Drawing.Size(104, 19);
             this.lblCostoEnvio.TabIndex = 16;
             this.lblCostoEnvio.Text = "Costo de envío:";
             // 
@@ -329,7 +331,7 @@
             this.lblPesoTotal.AutoSize = true;
             this.lblPesoTotal.Location = new System.Drawing.Point(22, 246);
             this.lblPesoTotal.Name = "lblPesoTotal";
-            this.lblPesoTotal.Size = new System.Drawing.Size(57, 13);
+            this.lblPesoTotal.Size = new System.Drawing.Size(72, 19);
             this.lblPesoTotal.TabIndex = 15;
             this.lblPesoTotal.Text = "Peso total:";
             // 
@@ -338,7 +340,7 @@
             this.cboEnvSucOrigen.FormattingEnabled = true;
             this.cboEnvSucOrigen.Location = new System.Drawing.Point(92, 58);
             this.cboEnvSucOrigen.Name = "cboEnvSucOrigen";
-            this.cboEnvSucOrigen.Size = new System.Drawing.Size(121, 21);
+            this.cboEnvSucOrigen.Size = new System.Drawing.Size(121, 25);
             this.cboEnvSucOrigen.TabIndex = 10;
             // 
             // label12
@@ -346,7 +348,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(20, 18);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.Size = new System.Drawing.Size(74, 19);
             this.label12.TabIndex = 1;
             this.label12.Text = "Remitente:";
             // 
@@ -355,7 +357,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(222, 21);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.Size = new System.Drawing.Size(86, 19);
             this.label13.TabIndex = 2;
             this.label13.Text = "Destinatario:";
             // 
@@ -363,7 +365,7 @@
             // 
             this.txtEnvObservaciones.Location = new System.Drawing.Point(108, 180);
             this.txtEnvObservaciones.Name = "txtEnvObservaciones";
-            this.txtEnvObservaciones.Size = new System.Drawing.Size(100, 20);
+            this.txtEnvObservaciones.Size = new System.Drawing.Size(100, 25);
             this.txtEnvObservaciones.TabIndex = 14;
             // 
             // label14
@@ -371,7 +373,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(22, 61);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 13);
+            this.label14.Size = new System.Drawing.Size(79, 19);
             this.label14.TabIndex = 3;
             this.label14.Text = "Suc. origen:";
             // 
@@ -379,7 +381,7 @@
             // 
             this.nudEnvContraEntrega.Location = new System.Drawing.Point(108, 142);
             this.nudEnvContraEntrega.Name = "nudEnvContraEntrega";
-            this.nudEnvContraEntrega.Size = new System.Drawing.Size(120, 20);
+            this.nudEnvContraEntrega.Size = new System.Drawing.Size(120, 25);
             this.nudEnvContraEntrega.TabIndex = 13;
             // 
             // label15
@@ -387,7 +389,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(224, 61);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 13);
+            this.label15.Size = new System.Drawing.Size(85, 19);
             this.label15.TabIndex = 4;
             this.label15.Text = "Suc. destino:";
             // 
@@ -396,7 +398,7 @@
             this.cboEnvServicio.FormattingEnabled = true;
             this.cboEnvServicio.Location = new System.Drawing.Point(92, 100);
             this.cboEnvServicio.Name = "cboEnvServicio";
-            this.cboEnvServicio.Size = new System.Drawing.Size(121, 21);
+            this.cboEnvServicio.Size = new System.Drawing.Size(121, 25);
             this.cboEnvServicio.TabIndex = 12;
             this.cboEnvServicio.SelectedIndexChanged += new System.EventHandler(this.cboEnvServicio_SelectedIndexChanged);
             // 
@@ -405,7 +407,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(22, 103);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 13);
+            this.label16.Size = new System.Drawing.Size(58, 19);
             this.label16.TabIndex = 5;
             this.label16.Text = "Servicio:";
             // 
@@ -414,7 +416,7 @@
             this.cboEnvSucDestino.FormattingEnabled = true;
             this.cboEnvSucDestino.Location = new System.Drawing.Point(294, 58);
             this.cboEnvSucDestino.Name = "cboEnvSucDestino";
-            this.cboEnvSucDestino.Size = new System.Drawing.Size(121, 21);
+            this.cboEnvSucDestino.Size = new System.Drawing.Size(121, 25);
             this.cboEnvSucDestino.TabIndex = 11;
             // 
             // label17
@@ -422,7 +424,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(22, 144);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(80, 13);
+            this.label17.Size = new System.Drawing.Size(105, 19);
             this.label17.TabIndex = 6;
             this.label17.Text = "Contra entrega:";
             // 
@@ -431,7 +433,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(22, 183);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(81, 13);
+            this.label18.Size = new System.Drawing.Size(101, 19);
             this.label18.TabIndex = 7;
             this.label18.Text = "Observaciones:";
             // 
@@ -440,7 +442,7 @@
             this.cboEnvDestinatario.FormattingEnabled = true;
             this.cboEnvDestinatario.Location = new System.Drawing.Point(294, 18);
             this.cboEnvDestinatario.Name = "cboEnvDestinatario";
-            this.cboEnvDestinatario.Size = new System.Drawing.Size(121, 21);
+            this.cboEnvDestinatario.Size = new System.Drawing.Size(121, 25);
             this.cboEnvDestinatario.TabIndex = 9;
             this.cboEnvDestinatario.SelectedIndexChanged += new System.EventHandler(this.cboEnvDestinatario_SelectedIndexChanged);
             // 
@@ -449,27 +451,29 @@
             this.cboEnvRemitente.FormattingEnabled = true;
             this.cboEnvRemitente.Location = new System.Drawing.Point(92, 18);
             this.cboEnvRemitente.Name = "cboEnvRemitente";
-            this.cboEnvRemitente.Size = new System.Drawing.Size(121, 21);
+            this.cboEnvRemitente.Size = new System.Drawing.Size(121, 25);
             this.cboEnvRemitente.TabIndex = 8;
             // 
             // tabEnviosRegistrados
             // 
             this.tabEnviosRegistrados.Controls.Add(this.groupBox2);
-            this.tabEnviosRegistrados.Location = new System.Drawing.Point(4, 22);
+            this.tabEnviosRegistrados.Location = new System.Drawing.Point(4, 26);
             this.tabEnviosRegistrados.Name = "tabEnviosRegistrados";
             this.tabEnviosRegistrados.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEnviosRegistrados.Size = new System.Drawing.Size(852, 403);
+            this.tabEnviosRegistrados.Size = new System.Drawing.Size(1052, 399);
             this.tabEnviosRegistrados.TabIndex = 1;
             this.tabEnviosRegistrados.Text = "Envíos registrados";
             this.tabEnviosRegistrados.UseVisualStyleBackColor = true;
             // 
             // frmEnvios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 511);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1100, 511);
             this.Controls.Add(this.tabEnvios);
             this.Controls.Add(this.btnVolver);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmEnvios";
             this.Text = "frmEnvios";
             this.Load += new System.EventHandler(this.frmEnvios_Load);

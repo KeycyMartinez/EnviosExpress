@@ -20,6 +20,7 @@ namespace EnviosExpress
         public frmClientes()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void frmClientes_Load(object sender, EventArgs e)

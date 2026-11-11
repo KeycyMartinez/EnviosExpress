@@ -25,6 +25,7 @@ namespace EnviosExpress
         public frmSeguimiento()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void frmSeguimiento_Load(object sender, EventArgs e)

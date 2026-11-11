@@ -15,6 +15,7 @@ namespace EnviosExpress
         public frmPresentacion()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)

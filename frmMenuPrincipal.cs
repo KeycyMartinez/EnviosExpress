@@ -12,9 +12,12 @@ namespace EnviosExpress
 {
     public partial class frmMenuPrincipal : Form
     {
+        public bool VolverAlLogin { get; private set; }
+
         public frmMenuPrincipal()
         {
             InitializeComponent();
+            BordesRedondeados.Aplicar(this);
         }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
@@ -75,7 +78,8 @@ namespace EnviosExpress
             {
                 BitacoraBD.Registrar("Logout", null, "Cierre de sesión");
                 Sesion.Cerrar();
-                this.Close();   // devuelve el control al login
+                VolverAlLogin = true;
+                this.Close();
             }
         }
     }

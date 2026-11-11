@@ -73,78 +73,84 @@
             // lblTituloProyecto
             // 
             this.lblTituloProyecto.AutoSize = true;
-            this.lblTituloProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloProyecto.Location = new System.Drawing.Point(183, 137);
+            this.lblTituloProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloProyecto.Location = new System.Drawing.Point(146, 139);
             this.lblTituloProyecto.Name = "lblTituloProyecto";
-            this.lblTituloProyecto.Size = new System.Drawing.Size(454, 20);
+            this.lblTituloProyecto.Size = new System.Drawing.Size(526, 24);
             this.lblTituloProyecto.TabIndex = 3;
             this.lblTituloProyecto.Text = "Proyecto #1 + Parcial N° 3 — Sistema de Administración";
             // 
             // lblIntegrantes
             // 
             this.lblIntegrantes.AutoSize = true;
-            this.lblIntegrantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIntegrantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIntegrantes.Location = new System.Drawing.Point(340, 194);
             this.lblIntegrantes.Name = "lblIntegrantes";
-            this.lblIntegrantes.Size = new System.Drawing.Size(107, 20);
+            this.lblIntegrantes.Size = new System.Drawing.Size(119, 24);
             this.lblIntegrantes.TabIndex = 4;
             this.lblIntegrantes.Text = "Integrantes:";
             // 
             // lblKeycyMartinez
             // 
             this.lblKeycyMartinez.AutoSize = true;
-            this.lblKeycyMartinez.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKeycyMartinez.Location = new System.Drawing.Point(274, 230);
+            this.lblKeycyMartinez.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKeycyMartinez.Location = new System.Drawing.Point(271, 231);
             this.lblKeycyMartinez.Name = "lblKeycyMartinez";
-            this.lblKeycyMartinez.Size = new System.Drawing.Size(238, 20);
+            this.lblKeycyMartinez.Size = new System.Drawing.Size(273, 24);
             this.lblKeycyMartinez.TabIndex = 5;
             this.lblKeycyMartinez.Text = "Keycy Martínez (3-752-1601)";
             // 
             // lblMariaPabon
             // 
             this.lblMariaPabon.AutoSize = true;
-            this.lblMariaPabon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMariaPabon.Location = new System.Drawing.Point(274, 259);
+            this.lblMariaPabon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMariaPabon.Location = new System.Drawing.Point(271, 260);
             this.lblMariaPabon.Name = "lblMariaPabon";
-            this.lblMariaPabon.Size = new System.Drawing.Size(218, 20);
+            this.lblMariaPabon.Size = new System.Drawing.Size(249, 24);
             this.lblMariaPabon.TabIndex = 6;
             this.lblMariaPabon.Text = "María Pabón (20-14-8649)";
             // 
             // lblErickCastillo
             // 
             this.lblErickCastillo.AutoSize = true;
-            this.lblErickCastillo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErickCastillo.Location = new System.Drawing.Point(274, 289);
+            this.lblErickCastillo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErickCastillo.Location = new System.Drawing.Point(271, 290);
             this.lblErickCastillo.Name = "lblErickCastillo";
-            this.lblErickCastillo.Size = new System.Drawing.Size(232, 20);
+            this.lblErickCastillo.Size = new System.Drawing.Size(263, 24);
             this.lblErickCastillo.TabIndex = 7;
             this.lblErickCastillo.Text = "Erick Castillo (8-1058-1105)";
             // 
             // lblMiguelMadrid
             // 
             this.lblMiguelMadrid.AutoSize = true;
-            this.lblMiguelMadrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiguelMadrid.Location = new System.Drawing.Point(274, 321);
+            this.lblMiguelMadrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiguelMadrid.Location = new System.Drawing.Point(271, 322);
             this.lblMiguelMadrid.Name = "lblMiguelMadrid";
-            this.lblMiguelMadrid.Size = new System.Drawing.Size(239, 20);
+            this.lblMiguelMadrid.Size = new System.Drawing.Size(276, 24);
             this.lblMiguelMadrid.TabIndex = 8;
             this.lblMiguelMadrid.Text = "Miguel Madrid (8-1043-1195)";
             // 
             // btnContinuar
             // 
-            this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinuar.Location = new System.Drawing.Point(329, 381);
+            this.btnContinuar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnContinuar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnContinuar.FlatAppearance.BorderSize = 1;
+            this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinuar.ForeColor = System.Drawing.Color.White;
+            this.btnContinuar.Location = new System.Drawing.Point(343, 381);
             this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(116, 30);
+            this.btnContinuar.Size = new System.Drawing.Size(116, 36);
             this.btnContinuar.TabIndex = 9;
             this.btnContinuar.Text = "Continuar";
-            this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.UseVisualStyleBackColor = false;
             this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // frmPresentacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.lblMiguelMadrid);
@@ -156,6 +162,7 @@
             this.Controls.Add(this.lblLicenciatura);
             this.Controls.Add(this.lblFacultad);
             this.Controls.Add(this.lblUniversidad);
+            this.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPresentacion";
             this.Text = "Form1";
             this.ResumeLayout(false);
