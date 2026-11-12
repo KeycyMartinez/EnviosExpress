@@ -17,8 +17,12 @@ namespace EnviosExpress
         public frmMenuPrincipal()
         {
             InitializeComponent();
-            BordesRedondeados.Aplicar(this);
-            ConfigurarTarjetas();
+
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                BordesRedondeados.Aplicar(this);
+                ConfigurarTarjetas();
+            }
         }
 
         private void ConfigurarTarjetas()
