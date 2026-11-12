@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvBitacora = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.txtBuscarUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -48,20 +47,8 @@
             this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBitacora.Location = new System.Drawing.Point(38, 116);
             this.dgvBitacora.Name = "dgvBitacora";
-            this.dgvBitacora.Size = new System.Drawing.Size(452, 259);
+            this.dgvBitacora.Size = new System.Drawing.Size(667, 259);
             this.dgvBitacora.TabIndex = 0;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(39, 398);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(101, 38);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
             // 
             // dtpFechaInicio
             // 
@@ -177,7 +164,6 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtBuscarUsuario);
             this.Controls.Add(this.dtpFechaInicio);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvBitacora);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmBitacora";
@@ -192,7 +178,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvBitacora;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.TextBox txtBuscarUsuario;
         private System.Windows.Forms.Label lblUsuario;

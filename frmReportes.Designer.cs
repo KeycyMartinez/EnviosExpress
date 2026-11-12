@@ -111,7 +111,7 @@
             this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReportes.Location = new System.Drawing.Point(38, 117);
             this.dgvReportes.Name = "dgvReportes";
-            this.dgvReportes.Size = new System.Drawing.Size(626, 268);
+            this.dgvReportes.Size = new System.Drawing.Size(612, 268);
             this.dgvReportes.TabIndex = 5;
             // 
             // lblTotalRegistros

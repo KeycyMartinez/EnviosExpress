@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EnviosExpress
 {
+    // Controles del formulario (nombres exactos):
+    //   txtNombreCompleto, txtUsuario, txtPassword, cmbRol, chkActivo, dgvUsuarios,
+    //   btnAgregar, btnModificar, btnEliminar, btnLimpiar, btnVolver
     public partial class frmUsuarios : Form
     {
-        private int idUsuarioSeleccionado = 0; // Variable interna para saber qué usuario se está editando
+        // Id del usuario que se está editando (0 = se está creando uno nuevo)
+        private int idUsuarioSeleccionado = 0;
 
         public frmUsuarios()
         {
@@ -19,27 +21,52 @@ namespace EnviosExpress
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
+            // Solo el Admin puede administrar usuarios (el menú ya oculta el botón, esto es doble seguridad)
+            if (Sesion.Rol != "Admin")
+            {
+                MessageBox.Show("No tiene permiso para administrar usuarios.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
+
+            // Los largos coinciden con las columnas de la tabla Usuarios
+            txtNombreCompleto.MaxLength = 80;
+            txtUsuario.MaxLength = 30;
+            txtPassword.MaxLength = 50;
+
+            dgvUsuarios.ReadOnly = true;
+            dgvUsuarios.AllowUserToAddRows = false;
+            dgvUsuarios.AllowUserToDeleteRows = false;
+            dgvUsuarios.MultiSelect = false;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             CargarRoles();
             ListarUsuarios();
+            LimpiarFormulario();
         }
 
         private void CargarRoles()
         {
+            // Estos dos valores son los únicos que acepta la restricción CHECK de la tabla Usuarios
+            cmbRol.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbRol.Items.Clear();
-            cmbRol.Items.Add("Administrador");
+            cmbRol.Items.Add("Admin");
             cmbRol.Items.Add("Operador");
-            cmbRol.SelectedIndex = 0;
+            cmbRol.SelectedIndex = 1;
         }
 
         private void ListarUsuarios()
         {
             ConexionBD db = new ConexionBD();
-            SqlConnection conexion = null;
 
             try
             {
-                conexion = db.AbrirConexion();
-                string query = "SELECT IdUsuario AS [Id], NombreUsuario AS [Usuario], Rol FROM Usuarios";
+                SqlConnection conexion = db.AbrirConexion();
+
+                // Nunca se muestra la contraseña
+                string query = "SELECT IdUsuario AS [Id], NombreCompleto AS [Nombre], NombreUsuario AS [Usuario], " +
+                               "Rol, Activo " +
+                               "FROM Usuarios ORDER BY NombreUsuario";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
@@ -47,6 +74,7 @@ namespace EnviosExpress
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dgvUsuarios.DataSource = dt;
+                    dgvUsuarios.Columns["Id"].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -59,49 +87,107 @@ namespace EnviosExpress
             }
         }
 
-        // Método para encriptar la contraseña utilizando SHA2-256
-        private string EncriptarSHA256(string texto)
+        private void LimpiarFormulario()
         {
-            using (SHA256 sha256 = SHA256.Create())
+            idUsuarioSeleccionado = 0;
+            txtNombreCompleto.Clear();
+            txtUsuario.Clear();
+            txtPassword.Clear();
+            cmbRol.SelectedIndex = 1;
+            chkActivo.Checked = true;
+
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+
+            dgvUsuarios.ClearSelection();
+            txtNombreCompleto.Focus();
+        }
+
+        private bool Validar()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombreCompleto.Text) || string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(texto));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
+                MessageBox.Show("Complete el nombre y el usuario.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (txtUsuario.Text.Trim().Contains(" "))
+            {
+                MessageBox.Show("El usuario no puede contener espacios.", "Dato inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Al crear, la contraseña es obligatoria. Al modificar, solo si se quiere cambiar.
+            bool creando = (idUsuarioSeleccionado == 0);
+            if (creando && string.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Escriba una contraseña para el nuevo usuario.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (txtPassword.Text.Length > 0 && txtPassword.Text.Length < 6)
+            {
+                MessageBox.Show("La contraseña debe tener al menos 6 caracteres.", "Dato inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void MostrarErrorBD(SqlException ex)
+        {
+            if (ex.Number == 2627 || ex.Number == 2601)
+            {
+                MessageBox.Show("Ya existe un usuario con ese nombre de usuario.", "Dato duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (ex.Number == 547)
+            {
+                MessageBox.Show("Este usuario ya tiene actividad registrada (bitácora o seguimientos) y no se puede eliminar.\n" +
+                                "Desmarque la casilla \"Activo\" para desactivarlo.",
+                                "Usuario en uso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Error de base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // ===================== CREATE =====================
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
-            {
-                MessageBox.Show("Por favor, complete el usuario y la contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (!Validar()) return;
 
             ConexionBD db = new ConexionBD();
-            SqlConnection conexion = null;
 
             try
             {
-                conexion = db.AbrirConexion();
-                string query = "INSERT INTO Usuarios (NombreUsuario, PasswordUsuario, Rol) VALUES (@Usuario, @Password, @Rol)";
+                SqlConnection conexion = db.AbrirConexion();
+
+                // El hash se calcula en SQL Server con la misma función que usa el login
+                string query = "INSERT INTO Usuarios (NombreUsuario, Contrasena, NombreCompleto, Rol, Activo) " +
+                               "VALUES (@usuario, HASHBYTES('SHA2_256', @password), @nombre, @rol, @activo)";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
-                    cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Password", EncriptarSHA256(txtPassword.Text.Trim()));
-                    cmd.Parameters.AddWithValue("@Rol", cmbRol.SelectedItem.ToString());
-
+                    cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 30).Value = txtUsuario.Text.Trim();
+                    cmd.Parameters.Add("@password", SqlDbType.VarChar, 100).Value = txtPassword.Text;
+                    cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 80).Value = txtNombreCompleto.Text.Trim();
+                    cmd.Parameters.Add("@rol", SqlDbType.VarChar, 15).Value = cmbRol.SelectedItem.ToString();
+                    cmd.Parameters.Add("@activo", SqlDbType.Bit).Value = chkActivo.Checked;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Usuario registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    ListarUsuarios();
-                    btnLimpiar_Click(sender, e);
                 }
+
+                BitacoraBD.Registrar("Crear", "Usuarios", "Usuario " + txtUsuario.Text.Trim() + " creado con rol " + cmbRol.SelectedItem);
+                MessageBox.Show("Usuario registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario();
+                ListarUsuarios();
+            }
+            catch (SqlException ex)
+            {
+                MostrarErrorBD(ex);
             }
             catch (Exception ex)
             {
@@ -113,50 +199,72 @@ namespace EnviosExpress
             }
         }
 
+        // ===================== UPDATE =====================
+
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (idUsuarioSeleccionado == 0)
             {
-                MessageBox.Show("Seleccione un usuario de la tabla para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un usuario de la tabla para modificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
+            }
+            if (!Validar()) return;
+
+            // Para no quedarse sin acceso, nadie puede desactivarse ni quitarse el rol de Admin a sí mismo
+            if (idUsuarioSeleccionado == Sesion.IdUsuario)
+            {
+                if (!chkActivo.Checked)
+                {
+                    MessageBox.Show("No puede desactivar su propia cuenta.", "No permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (cmbRol.SelectedItem.ToString() != "Admin")
+                {
+                    MessageBox.Show("No puede quitarse a sí mismo el rol de Admin.", "No permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             ConexionBD db = new ConexionBD();
-            SqlConnection conexion = null;
 
             try
             {
-                conexion = db.AbrirConexion();
+                SqlConnection conexion = db.AbrirConexion();
 
-                // Si el campo de contraseña está lleno, se actualiza; si está vacío, se mantiene la anterior
-                bool cambiarPass = !string.IsNullOrWhiteSpace(txtPassword.Text);
-                string query;
+                // Si el campo de contraseña tiene texto se cambia; si está vacío se conserva la anterior
+                bool cambiarPassword = !string.IsNullOrEmpty(txtPassword.Text);
 
-                if (cambiarPass)
+                string query = "UPDATE Usuarios SET NombreUsuario = @usuario, NombreCompleto = @nombre, " +
+                               "Rol = @rol, Activo = @activo";
+                if (cambiarPassword)
                 {
-                    query = "UPDATE Usuarios SET NombreUsuario = @Usuario, PasswordUsuario = @Password, Rol = @Rol WHERE IdUsuario = @Id";
+                    query += ", Contrasena = HASHBYTES('SHA2_256', @password)";
                 }
-                else
-                {
-                    query = "UPDATE Usuarios SET NombreUsuario = @Usuario, Rol = @Rol WHERE IdUsuario = @Id";
-                }
+                query += " WHERE IdUsuario = @id";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
-                    cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text.Trim());
-                    if (cambiarPass)
+                    cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 30).Value = txtUsuario.Text.Trim();
+                    cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 80).Value = txtNombreCompleto.Text.Trim();
+                    cmd.Parameters.Add("@rol", SqlDbType.VarChar, 15).Value = cmbRol.SelectedItem.ToString();
+                    cmd.Parameters.Add("@activo", SqlDbType.Bit).Value = chkActivo.Checked;
+                    if (cambiarPassword)
                     {
-                        cmd.Parameters.AddWithValue("@Password", EncriptarSHA256(txtPassword.Text.Trim()));
+                        cmd.Parameters.Add("@password", SqlDbType.VarChar, 100).Value = txtPassword.Text;
                     }
-                    cmd.Parameters.AddWithValue("@Rol", cmbRol.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@Id", idUsuarioSeleccionado);
-
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = idUsuarioSeleccionado;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Usuario actualizado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    ListarUsuarios();
-                    btnLimpiar_Click(sender, e);
                 }
+
+                BitacoraBD.Registrar("Editar", "Usuarios", "Usuario " + txtUsuario.Text.Trim() + " modificado" + (cambiarPassword ? " (cambio de contraseña)" : ""));
+                MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario();
+                ListarUsuarios();
+            }
+            catch (SqlException ex)
+            {
+                MostrarErrorBD(ex);
             }
             catch (Exception ex)
             {
@@ -168,53 +276,61 @@ namespace EnviosExpress
             }
         }
 
+        // ===================== DELETE =====================
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (idUsuarioSeleccionado == 0)
             {
-                MessageBox.Show("Seleccione un usuario de la tabla para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un usuario de la tabla para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DialogResult resultado = MessageBox.Show("¿Está seguro de que desea eliminar este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
+            if (idUsuarioSeleccionado == Sesion.IdUsuario)
             {
-                ConexionBD db = new ConexionBD();
-                SqlConnection conexion = null;
+                MessageBox.Show("No puede eliminar su propia cuenta.", "No permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                try
-                {
-                    conexion = db.AbrirConexion();
-                    string query = "DELETE FROM Usuarios WHERE IdUsuario = @Id";
+            DialogResult resultado = MessageBox.Show("¿Eliminar al usuario " + txtUsuario.Text.Trim() + "?",
+                                                     "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado != DialogResult.Yes) return;
 
-                    using (SqlCommand cmd = new SqlCommand(query, conexion))
-                    {
-                        cmd.Parameters.AddWithValue("@Id", idUsuarioSeleccionado);
-                        cmd.ExecuteNonQuery();
+            ConexionBD db = new ConexionBD();
 
-                        MessageBox.Show("Usuario eliminado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ListarUsuarios();
-                        btnLimpiar_Click(sender, e);
-                    }
-                }
-                catch (Exception ex)
+            try
+            {
+                SqlConnection conexion = db.AbrirConexion();
+
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Usuarios WHERE IdUsuario = @id", conexion))
                 {
-                    MessageBox.Show("Error al eliminar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = idUsuarioSeleccionado;
+                    cmd.ExecuteNonQuery();
                 }
-                finally
-                {
-                    db.CerrarConexion();
-                }
+
+                BitacoraBD.Registrar("Eliminar", "Usuarios", "Usuario " + txtUsuario.Text.Trim() + " eliminado");
+                MessageBox.Show("Usuario eliminado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarFormulario();
+                ListarUsuarios();
+            }
+            catch (SqlException ex)
+            {
+                MostrarErrorBD(ex);   // el error 547 explica que debe desactivarlo en lugar de eliminarlo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CerrarConexion();
             }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            idUsuarioSeleccionado = 0;
-            txtUsuario.Clear();
-            txtPassword.Clear();
-            if (cmbRol.Items.Count > 0) cmbRol.SelectedIndex = 0;
-            txtUsuario.Focus();
+            LimpiarFormulario();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -224,16 +340,19 @@ namespace EnviosExpress
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Al hacer clic en la tabla, pasamos los datos a los controles (la contraseña se limpia por seguridad)
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvUsuarios.Rows[e.RowIndex];
-                idUsuarioSeleccionado = Convert.ToInt32(row.Cells["Id"].Value);
-                txtUsuario.Text = row.Cells["Usuario"].Value.ToString();
-                cmbRol.SelectedItem = row.Cells["Rol"].Value.ToString();
-                txtPassword.Clear();
-            }
-        }
+            if (e.RowIndex < 0) return;
 
+            DataGridViewRow fila = dgvUsuarios.Rows[e.RowIndex];
+            idUsuarioSeleccionado = Convert.ToInt32(fila.Cells["Id"].Value);
+            txtNombreCompleto.Text = fila.Cells["Nombre"].Value.ToString();
+            txtUsuario.Text = fila.Cells["Usuario"].Value.ToString();
+            cmbRol.SelectedItem = fila.Cells["Rol"].Value.ToString();
+            chkActivo.Checked = Convert.ToBoolean(fila.Cells["Activo"].Value);
+            txtPassword.Clear();   // la contraseña nunca se muestra
+
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
     }
 }

@@ -15,6 +15,10 @@ namespace EnviosExpress
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
+            // Rango de fechas por defecto: los últimos 30 días
+            dtpFechaInicio.Value = DateTime.Now.AddDays(-30);
+            dtpFechaFin.Value = DateTime.Now;
+
             // Cargamos los estados posibles en el ComboBox al abrir el formulario
             CargarEstados();
 
@@ -30,11 +34,17 @@ namespace EnviosExpress
         private void CargarEstados()
         {
             cmbEstado.Items.Clear();
+            // Estos son los estados reales que guarda la columna EstadoActual de la tabla Envios
             cmbEstado.Items.Add("Todos");
-            cmbEstado.Items.Add("Pendiente");
-            cmbEstado.Items.Add("En tránsito");
+            cmbEstado.Items.Add("Registrado");
+            cmbEstado.Items.Add("En transito");
+            cmbEstado.Items.Add("En sucursal destino");
+            cmbEstado.Items.Add("En reparto");
             cmbEstado.Items.Add("Entregado");
+            cmbEstado.Items.Add("Intento fallido");
+            cmbEstado.Items.Add("Devuelto");
             cmbEstado.Items.Add("Cancelado");
+            cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
 
             cmbEstado.SelectedIndex = 0; // Selecciona "Todos" por defecto
         }
@@ -80,7 +90,7 @@ namespace EnviosExpress
                 conexion = db.AbrirConexion();
 
                 string query = @"SELECT 
-                                    e.IdEnvio AS [Código], 
+                                    e.Guia AS [Guía], 
                                     r.Nombre + ' ' + r.Apellido AS [Remitente], 
                                     d.Nombre + ' ' + d.Apellido AS [Destinatario], 
                                     e.FechaRegistro AS [Fecha], 
@@ -90,7 +100,8 @@ namespace EnviosExpress
                                  INNER JOIN Remitentes r ON r.IdRemitente = e.IdRemitente
                                  INNER JOIN Destinatarios d ON d.IdDestinatario = e.IdDestinatario
                                  WHERE (@FiltrarFechas = 0 OR e.FechaRegistro BETWEEN @FechaInicio AND @FechaFin)
-                                   AND (@Estado = 'Todos' OR e.EstadoActual = @Estado)";
+                                   AND (@Estado = 'Todos' OR e.EstadoActual = @Estado)
+                                 ORDER BY e.IdEnvio DESC";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
@@ -114,17 +125,19 @@ namespace EnviosExpress
                     da.Fill(dt);
 
                     dgvReportes.DataSource = dt;
+                    dgvReportes.Columns["Costo"].DefaultCellStyle.Format = "N2";
                     lblTotalRegistros.Text = $"Total de registros encontrados: {dt.Rows.Count}";
 
                     // Calcula la suma total de la columna Costo de los registros filtrados
                     decimal sumaIngresos = 0;
                     foreach (DataRow row in dt.Rows)
                     {
-                        if (row["Costo"] != DBNull.Value)
+                        // Los envíos cancelados no cuentan como ingreso
+                        if (row["Costo"] != DBNull.Value && row["Estado"].ToString() != "Cancelado")
                             sumaIngresos += Convert.ToDecimal(row["Costo"]);
                     }
                     // Asume que a la etiqueta de ingresos le pusiste lblTotalIngresos
-                    lblTotalIngresos.Text = $"Total de ingresos: ${sumaIngresos:N2}";
+                    lblTotalIngresos.Text = $"Total de ingresos (sin cancelados): ${sumaIngresos:N2}";
                 }
             }
             catch (Exception ex)

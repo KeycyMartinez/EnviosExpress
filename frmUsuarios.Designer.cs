@@ -42,6 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblNombreCompleto = new System.Windows.Forms.Label();
+            this.txtNombreCompleto = new System.Windows.Forms.TextBox();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(396, 98);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(230, 189);
+            this.dgvUsuarios.Size = new System.Drawing.Size(356, 239);
             this.dgvUsuarios.TabIndex = 3;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -188,12 +191,43 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Usuarios Registrados";
             // 
+            // lblNombreCompleto
+            // 
+            this.lblNombreCompleto.AutoSize = true;
+            this.lblNombreCompleto.Location = new System.Drawing.Point(202, 68);
+            this.lblNombreCompleto.Name = "lblNombreCompleto";
+            this.lblNombreCompleto.Size = new System.Drawing.Size(123, 19);
+            this.lblNombreCompleto.TabIndex = 13;
+            this.lblNombreCompleto.Text = "Nombre completo:";
+            // 
+            // txtNombreCompleto
+            // 
+            this.txtNombreCompleto.Location = new System.Drawing.Point(206, 99);
+            this.txtNombreCompleto.Name = "txtNombreCompleto";
+            this.txtNombreCompleto.Size = new System.Drawing.Size(143, 25);
+            this.txtNombreCompleto.TabIndex = 14;
+            // 
+            // chkActivo
+            // 
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.Checked = true;
+            this.chkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkActivo.Location = new System.Drawing.Point(206, 180);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(66, 23);
+            this.chkActivo.TabIndex = 15;
+            this.chkActivo.Text = "Activo";
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkActivo);
+            this.Controls.Add(this.txtNombreCompleto);
+            this.Controls.Add(this.lblNombreCompleto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -234,5 +268,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblNombreCompleto;
+        private System.Windows.Forms.TextBox txtNombreCompleto;
+        private System.Windows.Forms.CheckBox chkActivo;
     }
 }

@@ -70,7 +70,9 @@ namespace EnviosExpress
                 string query = @"SELECT 
                                     b.IdBitacora AS [Código], 
                                     u.NombreUsuario AS [Usuario], 
-                                    b.Accion AS [Acción Realizada], 
+                                    b.Accion AS [Acción], 
+                                    ISNULL(b.TablaAfectada, '-') AS [Tabla], 
+                                    ISNULL(b.Detalle, '') AS [Detalle], 
                                     b.FechaHora AS [Fecha y Hora] 
                                  FROM Bitacora b
                                  INNER JOIN Usuarios u ON u.IdUsuario = b.IdUsuario
