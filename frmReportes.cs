@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -15,14 +15,11 @@ namespace EnviosExpress
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
-            // Rango de fechas por defecto: los últimos 30 días
             dtpFechaInicio.Value = DateTime.Now.AddDays(-30);
             dtpFechaFin.Value = DateTime.Now;
 
-            // Cargamos los estados posibles en el ComboBox al abrir el formulario
             CargarEstados();
 
-            // Cargamos todos los registros por defecto al iniciar
             CargarReporteGeneral();
         }
 
@@ -34,7 +31,6 @@ namespace EnviosExpress
         private void CargarEstados()
         {
             cmbEstado.Items.Clear();
-            // Estos son los estados reales que guarda la columna EstadoActual de la tabla Envios
             cmbEstado.Items.Add("Todos");
             cmbEstado.Items.Add("Registrado");
             cmbEstado.Items.Add("En transito");
@@ -80,13 +76,11 @@ namespace EnviosExpress
 
         private void EjecutarConsultaFiltrada(DateTime? fechaInicio, DateTime? fechaFin, string estado)
         {
-            // Instanciamos tu clase de conexión
             ConexionBD db = new ConexionBD();
             SqlConnection conexion = null;
 
             try
             {
-                // Abrimos la conexión usando tu método
                 conexion = db.AbrirConexion();
 
                 string query = @"SELECT 
@@ -128,15 +122,12 @@ namespace EnviosExpress
                     dgvReportes.Columns["Costo"].DefaultCellStyle.Format = "N2";
                     lblTotalRegistros.Text = $"Total de registros encontrados: {dt.Rows.Count}";
 
-                    // Calcula la suma total de la columna Costo de los registros filtrados
                     decimal sumaIngresos = 0;
                     foreach (DataRow row in dt.Rows)
                     {
-                        // Los envíos cancelados no cuentan como ingreso
                         if (row["Costo"] != DBNull.Value && row["Estado"].ToString() != "Cancelado")
                             sumaIngresos += Convert.ToDecimal(row["Costo"]);
                     }
-                    // Asume que a la etiqueta de ingresos le pusiste lblTotalIngresos
                     lblTotalIngresos.Text = $"Total de ingresos (sin cancelados): ${sumaIngresos:N2}";
                 }
             }
@@ -146,7 +137,6 @@ namespace EnviosExpress
             }
             finally
             {
-                // Cerramos la conexión de forma segura al terminar
                 db.CerrarConexion();
             }
         }

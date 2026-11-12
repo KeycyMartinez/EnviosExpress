@@ -1,16 +1,12 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace EnviosExpress
 {
-    // Controles del formulario (nombres exactos):
-    //   txtNombreCompleto, txtUsuario, txtPassword, cmbRol, chkActivo, dgvUsuarios,
-    //   btnAgregar, btnModificar, btnEliminar, btnLimpiar, btnVolver
     public partial class frmUsuarios : Form
     {
-        // Id del usuario que se está editando (0 = se está creando uno nuevo)
         private int idUsuarioSeleccionado = 0;
 
         public frmUsuarios()
@@ -21,7 +17,6 @@ namespace EnviosExpress
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            // Solo el Admin puede administrar usuarios (el menú ya oculta el botón, esto es doble seguridad)
             if (Sesion.Rol != "Admin")
             {
                 MessageBox.Show("No tiene permiso para administrar usuarios.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -29,7 +24,6 @@ namespace EnviosExpress
                 return;
             }
 
-            // Los largos coinciden con las columnas de la tabla Usuarios
             txtNombreCompleto.MaxLength = 80;
             txtUsuario.MaxLength = 30;
             txtPassword.MaxLength = 50;
@@ -47,7 +41,6 @@ namespace EnviosExpress
 
         private void CargarRoles()
         {
-            // Estos dos valores son los únicos que acepta la restricción CHECK de la tabla Usuarios
             cmbRol.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbRol.Items.Clear();
             cmbRol.Items.Add("Admin");
@@ -63,7 +56,6 @@ namespace EnviosExpress
             {
                 SqlConnection conexion = db.AbrirConexion();
 
-                // Nunca se muestra la contraseña
                 string query = "SELECT IdUsuario AS [Id], NombreCompleto AS [Nombre], NombreUsuario AS [Usuario], " +
                                "Rol, Activo " +
                                "FROM Usuarios ORDER BY NombreUsuario";
@@ -118,7 +110,6 @@ namespace EnviosExpress
                 return false;
             }
 
-            // Al crear, la contraseña es obligatoria. Al modificar, solo si se quiere cambiar.
             bool creando = (idUsuarioSeleccionado == 0);
             if (creando && string.IsNullOrEmpty(txtPassword.Text))
             {
@@ -153,7 +144,6 @@ namespace EnviosExpress
             }
         }
 
-        // ===================== CREATE =====================
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -165,7 +155,6 @@ namespace EnviosExpress
             {
                 SqlConnection conexion = db.AbrirConexion();
 
-                // El hash se calcula en SQL Server con la misma función que usa el login
                 string query = "INSERT INTO Usuarios (NombreUsuario, Contrasena, NombreCompleto, Rol, Activo) " +
                                "VALUES (@usuario, HASHBYTES('SHA2_256', @password), @nombre, @rol, @activo)";
 
@@ -199,7 +188,6 @@ namespace EnviosExpress
             }
         }
 
-        // ===================== UPDATE =====================
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -210,7 +198,6 @@ namespace EnviosExpress
             }
             if (!Validar()) return;
 
-            // Para no quedarse sin acceso, nadie puede desactivarse ni quitarse el rol de Admin a sí mismo
             if (idUsuarioSeleccionado == Sesion.IdUsuario)
             {
                 if (!chkActivo.Checked)
@@ -231,7 +218,6 @@ namespace EnviosExpress
             {
                 SqlConnection conexion = db.AbrirConexion();
 
-                // Si el campo de contraseña tiene texto se cambia; si está vacío se conserva la anterior
                 bool cambiarPassword = !string.IsNullOrEmpty(txtPassword.Text);
 
                 string query = "UPDATE Usuarios SET NombreUsuario = @usuario, NombreCompleto = @nombre, " +
@@ -276,7 +262,6 @@ namespace EnviosExpress
             }
         }
 
-        // ===================== DELETE =====================
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {

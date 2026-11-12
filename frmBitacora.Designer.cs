@@ -38,7 +38,7 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTituloBitacora = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,15 +138,15 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // label1
+            // lblTituloBitacora
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 32);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Historial de Actividades";
+            this.lblTituloBitacora.AutoSize = true;
+            this.lblTituloBitacora.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloBitacora.Location = new System.Drawing.Point(32, 21);
+            this.lblTituloBitacora.Name = "lblTituloBitacora";
+            this.lblTituloBitacora.Size = new System.Drawing.Size(285, 32);
+            this.lblTituloBitacora.TabIndex = 11;
+            this.lblTituloBitacora.Text = "Historial de Actividades";
             // 
             // frmBitacora
             // 
@@ -154,7 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTituloBitacora);
             this.Controls.Add(this.btnimpiar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnFiltrar);
@@ -187,6 +187,6 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnimpiar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTituloBitacora;
     }
 }

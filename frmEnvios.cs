@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +14,10 @@ namespace EnviosExpress
     {
         private EnviosBD enviosBD = new EnviosBD();
 
-        // Lista de paquetes del envío que se está armando (vive en memoria hasta que se guarda)
         private DataTable paquetes = new DataTable();
 
-        // Evita recalcular el costo mientras se están llenando los ComboBox
         private bool cargando = false;
 
-        // Envío seleccionado en el listado
         private int idEnvioSel = 0;
         private string guiaSel = "";
         private string estadoSel = "";
@@ -36,7 +33,6 @@ namespace EnviosExpress
             ConfigurarGrid(dgvEnvios);
             ConfigurarNumericos();
 
-            // Estructura de la tabla de paquetes (en memoria, no es de la base de datos)
             paquetes.Columns.Add("Descripcion", typeof(string));
             paquetes.Columns.Add("PesoKg", typeof(decimal));
             paquetes.Columns.Add("ValorDeclarado", typeof(decimal));
@@ -89,7 +85,6 @@ namespace EnviosExpress
 
         private void CargarCombos()
         {
-            // Todos son de solo selección
             cboEnvRemitente.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEnvDestinatario.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEnvSucOrigen.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -104,8 +99,6 @@ namespace EnviosExpress
             cboEnvDestinatario.DisplayMember = "Destinatario";
             cboEnvDestinatario.ValueMember = "IdDestinatario";
 
-            // Se piden DOS tablas distintas: si dos ComboBox comparten la misma tabla,
-            // al elegir en uno se mueve la selección del otro.
             cboEnvSucOrigen.DataSource = enviosBD.ObtenerSucursalesActivas();
             cboEnvSucOrigen.DisplayMember = "Sucursal";
             cboEnvSucOrigen.ValueMember = "IdSucursal";
@@ -124,7 +117,6 @@ namespace EnviosExpress
             this.Close();
         }
 
-        // ===================== CÁLCULO DEL COSTO =====================
 
         private decimal PesoTotal()
         {
@@ -136,11 +128,8 @@ namespace EnviosExpress
             return total;
         }
 
-        // Costo = tarifa base de la zona del destinatario + peso total x precio por kg del servicio
         private decimal CalcularCosto()
         {
-            // SelectedItem de un ComboBox enlazado a una tabla es un DataRowView:
-            // permite leer cualquier columna de la fila elegida (no solo la que se muestra)
             DataRowView destinatario = cboEnvDestinatario.SelectedItem as DataRowView;
             DataRowView servicio = cboEnvServicio.SelectedItem as DataRowView;
 
@@ -173,7 +162,6 @@ namespace EnviosExpress
             RecalcularCosto();
         }
 
-        // ===================== PAQUETES DEL ENVÍO =====================
 
         private void btnPaqAgregar_Click(object sender, EventArgs e)
         {
@@ -209,7 +197,6 @@ namespace EnviosExpress
             RecalcularCosto();
         }
 
-        // ===================== GUARDAR EL ENVÍO =====================
 
         private void LimpiarEnvio()
         {
@@ -294,7 +281,6 @@ namespace EnviosExpress
             LimpiarEnvio();
         }
 
-        // ===================== LISTADO DE ENVÍOS =====================
 
         private void CargarEnvios()
         {
@@ -328,7 +314,6 @@ namespace EnviosExpress
             guiaSel = fila.Cells["Guia"].Value.ToString();
             estadoSel = fila.Cells["EstadoActual"].Value.ToString();
 
-            // Solo se puede cancelar un envío que todavía no salió
             btnCancelarEnvio.Enabled = (estadoSel == "Registrado");
         }
 

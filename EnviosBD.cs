@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,9 +6,7 @@ namespace EnviosExpress
 {
     public class EnviosBD
     {
-        // ===================== DATOS PARA LOS COMBOBOX =====================
 
-        // Ejecuta un SELECT sin parámetros y devuelve el resultado como tabla
         private DataTable ConsultarTabla(string query)
         {
             ConexionBD conexion = new ConexionBD();
@@ -32,7 +30,6 @@ namespace EnviosExpress
                                   "FROM Remitentes WHERE Activo = 1 ORDER BY Apellido, Nombre");
         }
 
-        // Incluye TarifaBase de la zona: se usa para calcular el costo del envío
         public DataTable ObtenerDestinatariosActivos()
         {
             return ConsultarTabla("SELECT d.IdDestinatario, d.Nombre + ' ' + d.Apellido + ' - ' + z.Nombre AS Destinatario, z.TarifaBase " +
@@ -45,16 +42,13 @@ namespace EnviosExpress
             return ConsultarTabla("SELECT IdSucursal, Nombre AS Sucursal FROM Sucursales WHERE Activa = 1 ORDER BY Nombre");
         }
 
-        // Incluye PrecioPorKg: se usa para calcular el costo del envío
         public DataTable ObtenerServiciosActivos()
         {
             return ConsultarTabla("SELECT IdServicio, Nombre + ' - ' + CAST(DiasEstimados AS VARCHAR(3)) + ' dias' AS Servicio, PrecioPorKg " +
                                   "FROM TiposServicio WHERE Activo = 1 ORDER BY PrecioPorKg");
         }
 
-        // ===================== LISTADO (READ) =====================
 
-        // Lee de la vista vw_PanelEnvios, que hace JOIN de 7 tablas
         public DataTable ObtenerPanel(string filtro)
         {
             ConexionBD conexion = new ConexionBD();
@@ -81,11 +75,7 @@ namespace EnviosExpress
             }
         }
 
-        // ===================== REGISTRAR UN ENVÍO (CREATE) =====================
 
-        // Guarda el envío, sus paquetes y el primer movimiento de seguimiento.
-        // Todo dentro de UNA transacción: o se guarda completo o no se guarda nada.
-        // Devuelve el número de guía generado.
         public string RegistrarEnvio(int idRemitente, int idDestinatario, int idSucOrigen, int idSucDestino,
                                      int idServicio, decimal costo, decimal contraEntrega,
                                      string observaciones, DataTable paquetes, int idUsuario)
@@ -96,7 +86,6 @@ namespace EnviosExpress
 
             try
             {
-                // 1) El envío (devuelve el Id recién generado con SCOPE_IDENTITY)
                 string sqlEnvio = "INSERT INTO Envios (IdRemitente, IdDestinatario, IdSucursalOrigen, IdSucursalDestino, " +
                                   "IdServicio, CostoEnvio, MontoContraEntrega, Observaciones) " +
                                   "VALUES (@rem, @des, @orig, @dest, @serv, @costo, @contra, @obs); " +
@@ -113,7 +102,6 @@ namespace EnviosExpress
                 cmdEnvio.Parameters.AddWithValue("@obs", string.IsNullOrWhiteSpace(observaciones) ? (object)DBNull.Value : observaciones.Trim());
                 int idEnvio = Convert.ToInt32(cmdEnvio.ExecuteScalar());
 
-                // 2) Cada paquete de la lista
                 string sqlPaquete = "INSERT INTO Paquetes (IdEnvio, Descripcion, PesoKg, ValorDeclarado, Fragil) " +
                                     "VALUES (@envio, @desc, @peso, @valor, @fragil)";
 
@@ -128,7 +116,6 @@ namespace EnviosExpress
                     cmdPaquete.ExecuteNonQuery();
                 }
 
-                // 3) Primer movimiento del historial: "Registrado" en la sucursal de origen
                 string sqlSeg = "INSERT INTO SeguimientoEnvio (IdEnvio, Estado, IdSucursal, IdUsuario) " +
                                 "VALUES (@envio, 'Registrado', @suc, @usuario)";
 
@@ -138,7 +125,6 @@ namespace EnviosExpress
                 cmdSeg.Parameters.AddWithValue("@usuario", idUsuario);
                 cmdSeg.ExecuteNonQuery();
 
-                // 4) Leer la guía generada por la base de datos (columna calculada)
                 SqlCommand cmdGuia = new SqlCommand("SELECT Guia FROM Envios WHERE IdEnvio = @envio", cn, tx);
                 cmdGuia.Parameters.AddWithValue("@envio", idEnvio);
                 string guia = cmdGuia.ExecuteScalar().ToString();
@@ -157,10 +143,7 @@ namespace EnviosExpress
             }
         }
 
-        // ===================== CANCELAR UN ENVÍO (DELETE LÓGICO) =====================
 
-        // Un envío no se borra: se marca "Cancelado" y queda en el historial.
-        // Solo se puede cancelar si todavía está en estado "Registrado".
         public bool CancelarEnvio(int idEnvio, int idUsuario)
         {
             ConexionBD conexion = new ConexionBD();

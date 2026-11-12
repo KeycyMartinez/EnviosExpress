@@ -31,7 +31,7 @@
             this.lblSegResumen = new System.Windows.Forms.Label();
             this.dgvSeguimiento = new System.Windows.Forms.DataGridView();
             this.lblSegEstado = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSegGuia = new System.Windows.Forms.Label();
             this.txtSegGuia = new System.Windows.Forms.TextBox();
             this.btnSegBuscar = new System.Windows.Forms.Button();
             this.gbSegMovimiento = new System.Windows.Forms.GroupBox();
@@ -39,12 +39,11 @@
             this.cboSegRepartidor = new System.Windows.Forms.ComboBox();
             this.lblSegRepartidor = new System.Windows.Forms.Label();
             this.txtSegNota = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblSegNota = new System.Windows.Forms.Label();
             this.cboSegEstado = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSegNuevoEstado = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSegTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeguimiento)).BeginInit();
             this.gbSegMovimiento.SuspendLayout();
             this.SuspendLayout();
@@ -74,14 +73,14 @@
             this.lblSegEstado.TabIndex = 2;
             this.lblSegEstado.Text = "Estado de seguimiento";
             // 
-            // label3
+            // lblSegGuia
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Guía:";
+            this.lblSegGuia.AutoSize = true;
+            this.lblSegGuia.Location = new System.Drawing.Point(23, 80);
+            this.lblSegGuia.Name = "lblSegGuia";
+            this.lblSegGuia.Size = new System.Drawing.Size(40, 19);
+            this.lblSegGuia.TabIndex = 3;
+            this.lblSegGuia.Text = "Guía:";
             // 
             // txtSegGuia
             // 
@@ -109,9 +108,9 @@
             this.gbSegMovimiento.Controls.Add(this.cboSegRepartidor);
             this.gbSegMovimiento.Controls.Add(this.lblSegRepartidor);
             this.gbSegMovimiento.Controls.Add(this.txtSegNota);
-            this.gbSegMovimiento.Controls.Add(this.label5);
+            this.gbSegMovimiento.Controls.Add(this.lblSegNota);
             this.gbSegMovimiento.Controls.Add(this.cboSegEstado);
-            this.gbSegMovimiento.Controls.Add(this.label4);
+            this.gbSegMovimiento.Controls.Add(this.lblSegNuevoEstado);
             this.gbSegMovimiento.Location = new System.Drawing.Point(27, 402);
             this.gbSegMovimiento.Name = "gbSegMovimiento";
             this.gbSegMovimiento.Size = new System.Drawing.Size(519, 121);
@@ -156,14 +155,14 @@
             this.txtSegNota.Size = new System.Drawing.Size(206, 25);
             this.txtSegNota.TabIndex = 3;
             // 
-            // label5
+            // lblSegNota
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 19);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Nota:";
+            this.lblSegNota.AutoSize = true;
+            this.lblSegNota.Location = new System.Drawing.Point(16, 66);
+            this.lblSegNota.Name = "lblSegNota";
+            this.lblSegNota.Size = new System.Drawing.Size(42, 19);
+            this.lblSegNota.TabIndex = 2;
+            this.lblSegNota.Text = "Nota:";
             // 
             // cboSegEstado
             // 
@@ -174,24 +173,14 @@
             this.cboSegEstado.TabIndex = 1;
             this.cboSegEstado.SelectedIndexChanged += new System.EventHandler(this.cboSegEstado_SelectedIndexChanged);
             // 
-            // label4
+            // lblSegNuevoEstado
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 19);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nuevo estado:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(420, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 25);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Historial de Movimientos";
+            this.lblSegNuevoEstado.AutoSize = true;
+            this.lblSegNuevoEstado.Location = new System.Drawing.Point(6, 25);
+            this.lblSegNuevoEstado.Name = "lblSegNuevoEstado";
+            this.lblSegNuevoEstado.Size = new System.Drawing.Size(97, 19);
+            this.lblSegNuevoEstado.TabIndex = 0;
+            this.lblSegNuevoEstado.Text = "Nuevo estado:";
             // 
             // btnVolver
             // 
@@ -205,15 +194,15 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // label1
+            // lblSegTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(388, 32);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Gestión y Seguimiento de Envíos";
+            this.lblSegTitulo.AutoSize = true;
+            this.lblSegTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSegTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblSegTitulo.Name = "lblSegTitulo";
+            this.lblSegTitulo.Size = new System.Drawing.Size(388, 32);
+            this.lblSegTitulo.TabIndex = 9;
+            this.lblSegTitulo.Text = "Gestión y Seguimiento de Envíos";
             // 
             // frmSeguimiento
             // 
@@ -222,13 +211,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSegTitulo);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSegResumen);
             this.Controls.Add(this.gbSegMovimiento);
             this.Controls.Add(this.btnSegBuscar);
             this.Controls.Add(this.txtSegGuia);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSegGuia);
             this.Controls.Add(this.lblSegEstado);
             this.Controls.Add(this.dgvSeguimiento);
             this.Controls.Add(this.lblSegResumen);
@@ -249,19 +238,18 @@
         private System.Windows.Forms.Label lblSegResumen;
         private System.Windows.Forms.DataGridView dgvSeguimiento;
         private System.Windows.Forms.Label lblSegEstado;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSegGuia;
         private System.Windows.Forms.TextBox txtSegGuia;
         private System.Windows.Forms.Button btnSegBuscar;
         private System.Windows.Forms.GroupBox gbSegMovimiento;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSegNuevoEstado;
         private System.Windows.Forms.TextBox txtSegNota;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSegNota;
         private System.Windows.Forms.ComboBox cboSegEstado;
         private System.Windows.Forms.ComboBox cboSegRepartidor;
         private System.Windows.Forms.Label lblSegRepartidor;
         private System.Windows.Forms.Button btnSegRegistrar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSegTitulo;
     }
 }

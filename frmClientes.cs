@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +30,6 @@ namespace EnviosExpress
 
             try
             {
-                // ComboBox: se ve "Provincia - Zona", el valor guardado es IdZona
                 cboDesZona.DropDownStyle = ComboBoxStyle.DropDownList;
                 cboDesZona.DataSource = destinatariosBD.ObtenerZonas();
                 cboDesZona.DisplayMember = "Zona";
@@ -59,7 +58,6 @@ namespace EnviosExpress
 
         private void tabClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Al cambiar de pestaña se refrescan los datos
             CargarRemitentes();
             CargarDestinatarios();
         }
@@ -137,7 +135,6 @@ namespace EnviosExpress
                 return false;
             }
 
-            // El correo es opcional, pero si se escribe debe tener formato válido
             if (!string.IsNullOrWhiteSpace(txtRemCorreo.Text) && !CorreoValido(txtRemCorreo.Text.Trim()))
             {
                 MessageBox.Show("El correo no tiene un formato válido.", "Dato inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -268,7 +265,6 @@ namespace EnviosExpress
             CargarRemitentes();
         }
 
-        // Teléfono: solo dígitos y guion
         private void txtRemTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && !char.IsControl(e.KeyChar))
@@ -450,7 +446,6 @@ namespace EnviosExpress
             CargarDestinatarios();
         }
 
-        // Teléfono: solo dígitos y guion
         private void txtDesTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && !char.IsControl(e.KeyChar))

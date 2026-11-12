@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace EnviosExpress
 {
-    // Uso desde cualquier formulario:
-    //   BitacoraBD.Registrar("Crear", "Envios", "Envio EE-000011 registrado");
     public static class BitacoraBD
     {
         public static void Registrar(string accion, string tabla, string detalle)
@@ -28,7 +26,6 @@ namespace EnviosExpress
             }
             catch (Exception)
             {
-                // Si falla la bitácora no se interrumpe lo que el usuario estaba haciendo.
             }
             finally
             {

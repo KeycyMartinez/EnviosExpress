@@ -30,15 +30,15 @@
         {
             this.tabClientes = new System.Windows.Forms.TabControl();
             this.tabRemitentes = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTituloRemitentes = new System.Windows.Forms.Label();
             this.chkRemActivo = new System.Windows.Forms.CheckBox();
             this.txtRemBuscar = new System.Windows.Forms.TextBox();
             this.lblRemBuscar = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblRemDireccion = new System.Windows.Forms.Label();
+            this.lblRemCorreo = new System.Windows.Forms.Label();
+            this.lblRemTelefono = new System.Windows.Forms.Label();
             this.lblApellidoRem = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRemCedula = new System.Windows.Forms.Label();
             this.lblNombreRem = new System.Windows.Forms.Label();
             this.txtRemDireccion = new System.Windows.Forms.TextBox();
             this.txtRemCorreo = new System.Windows.Forms.TextBox();
@@ -52,14 +52,14 @@
             this.btnRemAgregar = new System.Windows.Forms.Button();
             this.dgvRemitentes = new System.Windows.Forms.DataGridView();
             this.tabDestinatarios = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblTituloDestinatarios = new System.Windows.Forms.Label();
             this.cboDesZona = new System.Windows.Forms.ComboBox();
             this.chkDesActivo = new System.Windows.Forms.CheckBox();
             this.txtDesDireccion = new System.Windows.Forms.TextBox();
             this.txtDesApellido = new System.Windows.Forms.TextBox();
             this.txtDesNombre = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblDesDireccion = new System.Windows.Forms.Label();
+            this.lblDesZona = new System.Windows.Forms.Label();
             this.lblDesApellido = new System.Windows.Forms.Label();
             this.lblDesNombre = new System.Windows.Forms.Label();
             this.lblDesTelefono = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.btnDesEliminar = new System.Windows.Forms.Button();
             this.btnDesModificar = new System.Windows.Forms.Button();
             this.btnDesAgregar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDesBuscar = new System.Windows.Forms.Label();
             this.txtDesBuscar = new System.Windows.Forms.TextBox();
             this.dgvDestinatarios = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -93,15 +93,15 @@
             // 
             // tabRemitentes
             // 
-            this.tabRemitentes.Controls.Add(this.label3);
+            this.tabRemitentes.Controls.Add(this.lblTituloRemitentes);
             this.tabRemitentes.Controls.Add(this.chkRemActivo);
             this.tabRemitentes.Controls.Add(this.txtRemBuscar);
             this.tabRemitentes.Controls.Add(this.lblRemBuscar);
-            this.tabRemitentes.Controls.Add(this.label6);
-            this.tabRemitentes.Controls.Add(this.label5);
-            this.tabRemitentes.Controls.Add(this.label4);
+            this.tabRemitentes.Controls.Add(this.lblRemDireccion);
+            this.tabRemitentes.Controls.Add(this.lblRemCorreo);
+            this.tabRemitentes.Controls.Add(this.lblRemTelefono);
             this.tabRemitentes.Controls.Add(this.lblApellidoRem);
-            this.tabRemitentes.Controls.Add(this.label2);
+            this.tabRemitentes.Controls.Add(this.lblRemCedula);
             this.tabRemitentes.Controls.Add(this.lblNombreRem);
             this.tabRemitentes.Controls.Add(this.txtRemDireccion);
             this.tabRemitentes.Controls.Add(this.txtRemCorreo);
@@ -122,15 +122,15 @@
             this.tabRemitentes.Text = "Remitentes";
             this.tabRemitentes.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // lblTituloRemitentes
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(386, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Registro de Remitentes";
+            this.lblTituloRemitentes.AutoSize = true;
+            this.lblTituloRemitentes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloRemitentes.Location = new System.Drawing.Point(386, 25);
+            this.lblTituloRemitentes.Name = "lblTituloRemitentes";
+            this.lblTituloRemitentes.Size = new System.Drawing.Size(216, 25);
+            this.lblTituloRemitentes.TabIndex = 3;
+            this.lblTituloRemitentes.Text = "Registro de Remitentes";
             // 
             // chkRemActivo
             // 
@@ -161,32 +161,32 @@
             this.lblRemBuscar.TabIndex = 17;
             this.lblRemBuscar.Text = "Buscar:";
             // 
-            // label6
+            // lblRemDireccion
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(201, 198);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 19);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Dirección:";
+            this.lblRemDireccion.AutoSize = true;
+            this.lblRemDireccion.Location = new System.Drawing.Point(201, 198);
+            this.lblRemDireccion.Name = "lblRemDireccion";
+            this.lblRemDireccion.Size = new System.Drawing.Size(68, 19);
+            this.lblRemDireccion.TabIndex = 16;
+            this.lblRemDireccion.Text = "Dirección:";
             // 
-            // label5
+            // lblRemCorreo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 19);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Correo:";
+            this.lblRemCorreo.AutoSize = true;
+            this.lblRemCorreo.Location = new System.Drawing.Point(21, 198);
+            this.lblRemCorreo.Name = "lblRemCorreo";
+            this.lblRemCorreo.Size = new System.Drawing.Size(54, 19);
+            this.lblRemCorreo.TabIndex = 15;
+            this.lblRemCorreo.Text = "Correo:";
             // 
-            // label4
+            // lblRemTelefono
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(201, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 19);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Teléfono:";
+            this.lblRemTelefono.AutoSize = true;
+            this.lblRemTelefono.Location = new System.Drawing.Point(201, 138);
+            this.lblRemTelefono.Name = "lblRemTelefono";
+            this.lblRemTelefono.Size = new System.Drawing.Size(63, 19);
+            this.lblRemTelefono.TabIndex = 14;
+            this.lblRemTelefono.Text = "Teléfono:";
             // 
             // lblApellidoRem
             // 
@@ -197,14 +197,14 @@
             this.lblApellidoRem.TabIndex = 13;
             this.lblApellidoRem.Text = "Apellido:";
             // 
-            // label2
+            // lblRemCedula
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(201, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Cédula:";
+            this.lblRemCedula.AutoSize = true;
+            this.lblRemCedula.Location = new System.Drawing.Point(201, 77);
+            this.lblRemCedula.Name = "lblRemCedula";
+            this.lblRemCedula.Size = new System.Drawing.Size(54, 19);
+            this.lblRemCedula.TabIndex = 12;
+            this.lblRemCedula.Text = "Cédula:";
             // 
             // lblNombreRem
             // 
@@ -322,14 +322,14 @@
             // tabDestinatarios
             // 
             this.tabDestinatarios.BackColor = System.Drawing.Color.Transparent;
-            this.tabDestinatarios.Controls.Add(this.label7);
+            this.tabDestinatarios.Controls.Add(this.lblTituloDestinatarios);
             this.tabDestinatarios.Controls.Add(this.cboDesZona);
             this.tabDestinatarios.Controls.Add(this.chkDesActivo);
             this.tabDestinatarios.Controls.Add(this.txtDesDireccion);
             this.tabDestinatarios.Controls.Add(this.txtDesApellido);
             this.tabDestinatarios.Controls.Add(this.txtDesNombre);
-            this.tabDestinatarios.Controls.Add(this.label9);
-            this.tabDestinatarios.Controls.Add(this.label8);
+            this.tabDestinatarios.Controls.Add(this.lblDesDireccion);
+            this.tabDestinatarios.Controls.Add(this.lblDesZona);
             this.tabDestinatarios.Controls.Add(this.lblDesApellido);
             this.tabDestinatarios.Controls.Add(this.lblDesNombre);
             this.tabDestinatarios.Controls.Add(this.lblDesTelefono);
@@ -338,7 +338,7 @@
             this.tabDestinatarios.Controls.Add(this.btnDesEliminar);
             this.tabDestinatarios.Controls.Add(this.btnDesModificar);
             this.tabDestinatarios.Controls.Add(this.btnDesAgregar);
-            this.tabDestinatarios.Controls.Add(this.label1);
+            this.tabDestinatarios.Controls.Add(this.lblDesBuscar);
             this.tabDestinatarios.Controls.Add(this.txtDesBuscar);
             this.tabDestinatarios.Controls.Add(this.dgvDestinatarios);
             this.tabDestinatarios.Location = new System.Drawing.Point(4, 26);
@@ -348,15 +348,15 @@
             this.tabDestinatarios.TabIndex = 1;
             this.tabDestinatarios.Text = "Destinatarios";
             // 
-            // label7
+            // lblTituloDestinatarios
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(399, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(234, 25);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Registro de Destinatarios";
+            this.lblTituloDestinatarios.AutoSize = true;
+            this.lblTituloDestinatarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDestinatarios.Location = new System.Drawing.Point(399, 12);
+            this.lblTituloDestinatarios.Name = "lblTituloDestinatarios";
+            this.lblTituloDestinatarios.Size = new System.Drawing.Size(234, 25);
+            this.lblTituloDestinatarios.TabIndex = 19;
+            this.lblTituloDestinatarios.Text = "Registro de Destinatarios";
             // 
             // cboDesZona
             // 
@@ -399,23 +399,23 @@
             this.txtDesNombre.Size = new System.Drawing.Size(137, 25);
             this.txtDesNombre.TabIndex = 13;
             // 
-            // label9
+            // lblDesDireccion
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(203, 143);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 19);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Dirección exacta:";
+            this.lblDesDireccion.AutoSize = true;
+            this.lblDesDireccion.Location = new System.Drawing.Point(203, 143);
+            this.lblDesDireccion.Name = "lblDesDireccion";
+            this.lblDesDireccion.Size = new System.Drawing.Size(110, 19);
+            this.lblDesDireccion.TabIndex = 12;
+            this.lblDesDireccion.Text = "Dirección exacta:";
             // 
-            // label8
+            // lblDesZona
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(203, 82);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 19);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Zona:";
+            this.lblDesZona.AutoSize = true;
+            this.lblDesZona.Location = new System.Drawing.Point(203, 82);
+            this.lblDesZona.Name = "lblDesZona";
+            this.lblDesZona.Size = new System.Drawing.Size(43, 19);
+            this.lblDesZona.TabIndex = 11;
+            this.lblDesZona.Text = "Zona:";
             // 
             // lblDesApellido
             // 
@@ -504,14 +504,14 @@
             this.btnDesAgregar.UseVisualStyleBackColor = false;
             this.btnDesAgregar.Click += new System.EventHandler(this.btnDesAgregar_Click);
             // 
-            // label1
+            // lblDesBuscar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar:";
+            this.lblDesBuscar.AutoSize = true;
+            this.lblDesBuscar.Location = new System.Drawing.Point(20, 30);
+            this.lblDesBuscar.Name = "lblDesBuscar";
+            this.lblDesBuscar.Size = new System.Drawing.Size(52, 19);
+            this.lblDesBuscar.TabIndex = 2;
+            this.lblDesBuscar.Text = "Buscar:";
             // 
             // txtDesBuscar
             // 
@@ -592,20 +592,18 @@
         private System.Windows.Forms.TextBox txtRemTelefono;
         private System.Windows.Forms.TextBox txtRemApellido;
         private System.Windows.Forms.TextBox txtRemCedula;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblRemTelefono;
         private System.Windows.Forms.Label lblApellidoRem;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRemCedula;
         private System.Windows.Forms.Label lblNombreRem;
         private System.Windows.Forms.TextBox txtRemDireccion;
         private System.Windows.Forms.TextBox txtRemCorreo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRemDireccion;
+        private System.Windows.Forms.Label lblRemCorreo;
         private System.Windows.Forms.TextBox txtRemBuscar;
         private System.Windows.Forms.Label lblRemBuscar;
         private System.Windows.Forms.CheckBox chkRemActivo;
         private System.Windows.Forms.DataGridView dgvDestinatarios;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDesBuscar;
         private System.Windows.Forms.Label lblDesTelefono;
         private System.Windows.Forms.TextBox txtDesTelefono;
         private System.Windows.Forms.Button btnDesLimpiar;
@@ -615,14 +613,16 @@
         private System.Windows.Forms.TextBox txtDesDireccion;
         private System.Windows.Forms.TextBox txtDesApellido;
         private System.Windows.Forms.TextBox txtDesNombre;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblDesDireccion;
+        private System.Windows.Forms.Label lblDesZona;
         private System.Windows.Forms.Label lblDesApellido;
         private System.Windows.Forms.Label lblDesNombre;
         private System.Windows.Forms.CheckBox chkDesActivo;
         private System.Windows.Forms.ComboBox cboDesZona;
         private System.Windows.Forms.Label lblTituloClientes;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTituloRemitentes;
+        private System.Windows.Forms.Label lblTituloDestinatarios;
+        private System.Windows.Forms.TextBox txtDesBuscar;
+        private System.Windows.Forms.Label lblDesBuscar;
     }
 }

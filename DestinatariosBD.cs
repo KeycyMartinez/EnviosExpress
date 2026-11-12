@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,7 +6,6 @@ namespace EnviosExpress
 {
     public class DestinatariosBD
     {
-        // READ (con JOIN): destinatarios junto al nombre de su zona
         public DataTable ObtenerTabla(string filtro)
         {
             ConexionBD conexion = new ConexionBD();
@@ -34,7 +33,6 @@ namespace EnviosExpress
             }
         }
 
-        // Zonas activas para llenar el ComboBox (se ve "Provincia - Zona", vale IdZona)
         public DataTable ObtenerZonas()
         {
             ConexionBD conexion = new ConexionBD();
@@ -56,7 +54,6 @@ namespace EnviosExpress
             }
         }
 
-        // CREATE
         public bool Insertar(string nombre, string apellido, string telefono, int idZona, string direccion)
         {
             ConexionBD conexion = new ConexionBD();
@@ -81,7 +78,6 @@ namespace EnviosExpress
             }
         }
 
-        // UPDATE
         public bool Actualizar(int id, string nombre, string apellido, string telefono,
                                int idZona, string direccion, bool activo)
         {
@@ -111,7 +107,6 @@ namespace EnviosExpress
             }
         }
 
-        // DELETE (falla con error 547 si el destinatario ya tiene envíos)
         public bool Eliminar(int id)
         {
             ConexionBD conexion = new ConexionBD();

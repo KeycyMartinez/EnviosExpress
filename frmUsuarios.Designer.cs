@@ -37,11 +37,11 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblTituloUsuarios = new System.Windows.Forms.Label();
+            this.lblUsuariosRegistrados = new System.Windows.Forms.Label();
             this.lblNombreCompleto = new System.Windows.Forms.Label();
             this.txtNombreCompleto = new System.Windows.Forms.TextBox();
             this.chkActivo = new System.Windows.Forms.CheckBox();
@@ -144,52 +144,52 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // label1
+            // lblUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 19);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Usuario:";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(19, 68);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(59, 19);
+            this.lblUsuario.TabIndex = 8;
+            this.lblUsuario.Text = "Usuario:";
             // 
-            // label2
+            // lblPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Contraseña:";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(15, 148);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(82, 19);
+            this.lblPassword.TabIndex = 9;
+            this.lblPassword.Text = "Contraseña:";
             // 
-            // label3
+            // lblRol
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 220);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 19);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Rol:";
+            this.lblRol.AutoSize = true;
+            this.lblRol.Location = new System.Drawing.Point(17, 220);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(31, 19);
+            this.lblRol.TabIndex = 10;
+            this.lblRol.Text = "Rol:";
             // 
-            // label4
+            // lblTituloUsuarios
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(242, 32);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Gestión de Usuarios";
+            this.lblTituloUsuarios.AutoSize = true;
+            this.lblTituloUsuarios.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloUsuarios.Location = new System.Drawing.Point(17, 21);
+            this.lblTituloUsuarios.Name = "lblTituloUsuarios";
+            this.lblTituloUsuarios.Size = new System.Drawing.Size(242, 32);
+            this.lblTituloUsuarios.TabIndex = 11;
+            this.lblTituloUsuarios.Text = "Gestión de Usuarios";
             // 
-            // label5
+            // lblUsuariosRegistrados
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(391, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 25);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Usuarios Registrados";
+            this.lblUsuariosRegistrados.AutoSize = true;
+            this.lblUsuariosRegistrados.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuariosRegistrados.Location = new System.Drawing.Point(391, 62);
+            this.lblUsuariosRegistrados.Name = "lblUsuariosRegistrados";
+            this.lblUsuariosRegistrados.Size = new System.Drawing.Size(198, 25);
+            this.lblUsuariosRegistrados.TabIndex = 12;
+            this.lblUsuariosRegistrados.Text = "Usuarios Registrados";
             // 
             // lblNombreCompleto
             // 
@@ -228,11 +228,11 @@
             this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.txtNombreCompleto);
             this.Controls.Add(this.lblNombreCompleto);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblUsuariosRegistrados);
+            this.Controls.Add(this.lblTituloUsuarios);
+            this.Controls.Add(this.lblRol);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
@@ -263,11 +263,11 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label lblTituloUsuarios;
+        private System.Windows.Forms.Label lblUsuariosRegistrados;
         private System.Windows.Forms.Label lblNombreCompleto;
         private System.Windows.Forms.TextBox txtNombreCompleto;
         private System.Windows.Forms.CheckBox chkActivo;

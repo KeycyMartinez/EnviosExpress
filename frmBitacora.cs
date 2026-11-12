@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -15,11 +15,9 @@ namespace EnviosExpress
 
         private void frmBitacora_Load(object sender, EventArgs e)
         {
-            // Inicializamos los selectores de fecha con el último mes por defecto
             dtpFechaInicio.Value = DateTime.Now.AddDays(-30);
             dtpFechaFin.Value = DateTime.Now;
 
-            // Cargamos la bitácora completa al iniciar
             CargarBitacoraGeneral();
         }
 
@@ -66,7 +64,6 @@ namespace EnviosExpress
             {
                 conexion = db.AbrirConexion();
 
-                // Consulta dinámica segura que evalúa si se usa el filtro de usuario y/o fechas
                 string query = @"SELECT 
                                     b.IdBitacora AS [Código], 
                                     u.NombreUsuario AS [Usuario], 
@@ -82,7 +79,6 @@ namespace EnviosExpress
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
-                    // Filtro por Usuario
                     if (!string.IsNullOrEmpty(usuario))
                     {
                         cmd.Parameters.AddWithValue("@FiltrarUsuario", 1);
@@ -94,12 +90,10 @@ namespace EnviosExpress
                         cmd.Parameters.AddWithValue("@Usuario", DBNull.Value);
                     }
 
-                    // Filtro por Fechas
                     if (fechaInicio.HasValue && fechaFin.HasValue)
                     {
                         cmd.Parameters.AddWithValue("@FiltrarFechas", 1);
                         cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.Value);
-                        // Ajustamos la fecha fin hasta el último segundo del día
                         cmd.Parameters.AddWithValue("@FechaFin", fechaFin.Value.AddDays(1).AddSeconds(-1));
                     }
                     else

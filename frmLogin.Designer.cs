@@ -35,8 +35,8 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picLogoLogin = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).BeginInit();
             this.SuspendLayout();
             //
             // lblTitulo
@@ -101,15 +101,15 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // pictureBox1
+            // picLogoLogin
             //
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(336, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 98);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picLogoLogin.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.picLogoLogin.Location = new System.Drawing.Point(336, 12);
+            this.picLogoLogin.Name = "picLogoLogin";
+            this.picLogoLogin.Size = new System.Drawing.Size(117, 98);
+            this.picLogoLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogoLogin.TabIndex = 6;
+            this.picLogoLogin.TabStop = false;
             //
             // frmLogin
             // 
@@ -123,10 +123,10 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picLogoLogin);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +140,6 @@
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogoLogin;
     }
 }

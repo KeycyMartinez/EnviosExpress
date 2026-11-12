@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,7 +6,6 @@ namespace EnviosExpress
 {
     public class RemitentesBD
     {
-        // READ: trae los remitentes que coinciden con el texto de búsqueda
         public DataTable ObtenerTabla(string filtro)
         {
             ConexionBD conexion = new ConexionBD();
@@ -31,7 +30,6 @@ namespace EnviosExpress
             }
         }
 
-        // CREATE
         public bool Insertar(string cedula, string nombre, string apellido,
                              string telefono, string correo, string direccion)
         {
@@ -58,7 +56,6 @@ namespace EnviosExpress
             }
         }
 
-        // UPDATE
         public bool Actualizar(int id, string cedula, string nombre, string apellido,
                                string telefono, string correo, string direccion, bool activo)
         {
@@ -89,7 +86,6 @@ namespace EnviosExpress
             }
         }
 
-        // DELETE (falla con error 547 si el remitente ya tiene envíos)
         public bool Eliminar(int id)
         {
             ConexionBD conexion = new ConexionBD();

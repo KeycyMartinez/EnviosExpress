@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -8,12 +8,10 @@ public class ConexionBD
 
     public ConexionBD()
     {
-        // Lee la cadena de conexión definida en el App.config
         string cadenaConexion = ConfigurationManager.ConnectionStrings["EnviosExpressConnection"].ConnectionString;
         conexion = new SqlConnection(cadenaConexion);
     }
 
-    // Método para abrir la conexión
     public SqlConnection AbrirConexion()
     {
         try
@@ -30,7 +28,6 @@ public class ConexionBD
         return conexion;
     }
 
-    // Método para cerrar la conexión
     public SqlConnection CerrarConexion()
     {
         try

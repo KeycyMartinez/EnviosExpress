@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpEnviosRegistrados = new System.Windows.Forms.GroupBox();
             this.dgvEnvios = new System.Windows.Forms.DataGridView();
             this.btnCancelarEnvio = new System.Windows.Forms.Button();
             this.txtEnvBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEnvBuscar = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.tabEnvios = new System.Windows.Forms.TabControl();
             this.tabNuevoEnvio = new System.Windows.Forms.TabPage();
             this.btnGuardarEnvio = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpPaquetes = new System.Windows.Forms.GroupBox();
             this.btnPaqQuitar = new System.Windows.Forms.Button();
             this.dgvPaquetes = new System.Windows.Forms.DataGridView();
             this.btnPaqAgregar = new System.Windows.Forms.Button();
@@ -45,53 +45,53 @@
             this.nudPaqValor = new System.Windows.Forms.NumericUpDown();
             this.nudPaqPeso = new System.Windows.Forms.NumericUpDown();
             this.txtPaqDescripcion = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPaqValor = new System.Windows.Forms.Label();
+            this.lblPaqPeso = new System.Windows.Forms.Label();
+            this.lblPaqDescripcion = new System.Windows.Forms.Label();
             this.btnLimpiarEnvio = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grpDatosEnvio = new System.Windows.Forms.GroupBox();
             this.lblCostoEnvio = new System.Windows.Forms.Label();
             this.lblPesoTotal = new System.Windows.Forms.Label();
             this.cboEnvSucOrigen = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblEnvRemitente = new System.Windows.Forms.Label();
+            this.lblEnvDestinatario = new System.Windows.Forms.Label();
             this.txtEnvObservaciones = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblEnvSucOrigen = new System.Windows.Forms.Label();
             this.nudEnvContraEntrega = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblEnvContraEntrega = new System.Windows.Forms.Label();
             this.cboEnvServicio = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblEnvServicio = new System.Windows.Forms.Label();
             this.cboEnvSucDestino = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblEnvSucDestino = new System.Windows.Forms.Label();
+            this.lblEnvObservaciones = new System.Windows.Forms.Label();
             this.cboEnvDestinatario = new System.Windows.Forms.ComboBox();
             this.cboEnvRemitente = new System.Windows.Forms.ComboBox();
             this.tabEnviosRegistrados = new System.Windows.Forms.TabPage();
-            this.groupBox2.SuspendLayout();
+            this.grpEnviosRegistrados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).BeginInit();
             this.tabEnvios.SuspendLayout();
             this.tabNuevoEnvio.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpPaquetes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPaqValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPaqPeso)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.grpDatosEnvio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEnvContraEntrega)).BeginInit();
             this.tabEnviosRegistrados.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // grpEnviosRegistrados
             // 
-            this.groupBox2.Controls.Add(this.dgvEnvios);
-            this.groupBox2.Controls.Add(this.btnCancelarEnvio);
-            this.groupBox2.Controls.Add(this.txtEnvBuscar);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(28, 27);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1020, 373);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Envíos registrados";
+            this.grpEnviosRegistrados.Controls.Add(this.dgvEnvios);
+            this.grpEnviosRegistrados.Controls.Add(this.btnCancelarEnvio);
+            this.grpEnviosRegistrados.Controls.Add(this.txtEnvBuscar);
+            this.grpEnviosRegistrados.Controls.Add(this.lblEnvBuscar);
+            this.grpEnviosRegistrados.Location = new System.Drawing.Point(28, 27);
+            this.grpEnviosRegistrados.Name = "grpEnviosRegistrados";
+            this.grpEnviosRegistrados.Size = new System.Drawing.Size(1020, 373);
+            this.grpEnviosRegistrados.TabIndex = 19;
+            this.grpEnviosRegistrados.TabStop = false;
+            this.grpEnviosRegistrados.Text = "Envíos registrados";
             // 
             // dgvEnvios
             // 
@@ -123,14 +123,14 @@
             this.txtEnvBuscar.TabIndex = 1;
             this.txtEnvBuscar.TextChanged += new System.EventHandler(this.txtEnvBuscar_TextChanged);
             // 
-            // label1
+            // lblEnvBuscar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar:";
+            this.lblEnvBuscar.AutoSize = true;
+            this.lblEnvBuscar.Location = new System.Drawing.Point(22, 34);
+            this.lblEnvBuscar.Name = "lblEnvBuscar";
+            this.lblEnvBuscar.Size = new System.Drawing.Size(52, 19);
+            this.lblEnvBuscar.TabIndex = 0;
+            this.lblEnvBuscar.Text = "Buscar:";
             // 
             // btnVolver
             // 
@@ -157,9 +157,9 @@
             // tabNuevoEnvio
             // 
             this.tabNuevoEnvio.Controls.Add(this.btnGuardarEnvio);
-            this.tabNuevoEnvio.Controls.Add(this.groupBox1);
+            this.tabNuevoEnvio.Controls.Add(this.grpPaquetes);
             this.tabNuevoEnvio.Controls.Add(this.btnLimpiarEnvio);
-            this.tabNuevoEnvio.Controls.Add(this.groupBox4);
+            this.tabNuevoEnvio.Controls.Add(this.grpDatosEnvio);
             this.tabNuevoEnvio.Location = new System.Drawing.Point(4, 26);
             this.tabNuevoEnvio.Name = "tabNuevoEnvio";
             this.tabNuevoEnvio.Padding = new System.Windows.Forms.Padding(3);
@@ -181,24 +181,24 @@
             this.btnGuardarEnvio.UseVisualStyleBackColor = true;
             this.btnGuardarEnvio.Click += new System.EventHandler(this.btnGuardarEnvio_Click);
             // 
-            // groupBox1
+            // grpPaquetes
             // 
-            this.groupBox1.Controls.Add(this.btnPaqQuitar);
-            this.groupBox1.Controls.Add(this.dgvPaquetes);
-            this.groupBox1.Controls.Add(this.btnPaqAgregar);
-            this.groupBox1.Controls.Add(this.chkPaqFragil);
-            this.groupBox1.Controls.Add(this.nudPaqValor);
-            this.groupBox1.Controls.Add(this.nudPaqPeso);
-            this.groupBox1.Controls.Add(this.txtPaqDescripcion);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(463, 9);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 316);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Paquetes";
+            this.grpPaquetes.Controls.Add(this.btnPaqQuitar);
+            this.grpPaquetes.Controls.Add(this.dgvPaquetes);
+            this.grpPaquetes.Controls.Add(this.btnPaqAgregar);
+            this.grpPaquetes.Controls.Add(this.chkPaqFragil);
+            this.grpPaquetes.Controls.Add(this.nudPaqValor);
+            this.grpPaquetes.Controls.Add(this.nudPaqPeso);
+            this.grpPaquetes.Controls.Add(this.txtPaqDescripcion);
+            this.grpPaquetes.Controls.Add(this.lblPaqValor);
+            this.grpPaquetes.Controls.Add(this.lblPaqPeso);
+            this.grpPaquetes.Controls.Add(this.lblPaqDescripcion);
+            this.grpPaquetes.Location = new System.Drawing.Point(463, 9);
+            this.grpPaquetes.Name = "grpPaquetes";
+            this.grpPaquetes.Size = new System.Drawing.Size(372, 316);
+            this.grpPaquetes.TabIndex = 22;
+            this.grpPaquetes.TabStop = false;
+            this.grpPaquetes.Text = "Paquetes";
             // 
             // btnPaqQuitar
             // 
@@ -269,32 +269,32 @@
             this.txtPaqDescripcion.Size = new System.Drawing.Size(221, 25);
             this.txtPaqDescripcion.TabIndex = 3;
             // 
-            // label4
+            // lblPaqValor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Valor:";
+            this.lblPaqValor.AutoSize = true;
+            this.lblPaqValor.Location = new System.Drawing.Point(15, 103);
+            this.lblPaqValor.Name = "lblPaqValor";
+            this.lblPaqValor.Size = new System.Drawing.Size(43, 19);
+            this.lblPaqValor.TabIndex = 2;
+            this.lblPaqValor.Text = "Valor:";
             // 
-            // label3
+            // lblPaqPeso
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Peso:";
+            this.lblPaqPeso.AutoSize = true;
+            this.lblPaqPeso.Location = new System.Drawing.Point(15, 66);
+            this.lblPaqPeso.Name = "lblPaqPeso";
+            this.lblPaqPeso.Size = new System.Drawing.Size(40, 19);
+            this.lblPaqPeso.TabIndex = 1;
+            this.lblPaqPeso.Text = "Peso:";
             // 
-            // label2
+            // lblPaqDescripcion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Descripción:";
+            this.lblPaqDescripcion.AutoSize = true;
+            this.lblPaqDescripcion.Location = new System.Drawing.Point(15, 33);
+            this.lblPaqDescripcion.Name = "lblPaqDescripcion";
+            this.lblPaqDescripcion.Size = new System.Drawing.Size(82, 19);
+            this.lblPaqDescripcion.TabIndex = 0;
+            this.lblPaqDescripcion.Text = "Descripción:";
             // 
             // btnLimpiarEnvio
             // 
@@ -309,30 +309,30 @@
             this.btnLimpiarEnvio.UseVisualStyleBackColor = false;
             this.btnLimpiarEnvio.Click += new System.EventHandler(this.btnLimpiarEnvio_Click);
             // 
-            // groupBox4
+            // grpDatosEnvio
             // 
-            this.groupBox4.Controls.Add(this.lblCostoEnvio);
-            this.groupBox4.Controls.Add(this.lblPesoTotal);
-            this.groupBox4.Controls.Add(this.cboEnvSucOrigen);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.txtEnvObservaciones);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.nudEnvContraEntrega);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.cboEnvServicio);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.cboEnvSucDestino);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Controls.Add(this.cboEnvDestinatario);
-            this.groupBox4.Controls.Add(this.cboEnvRemitente);
-            this.groupBox4.Location = new System.Drawing.Point(15, 9);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(429, 316);
-            this.groupBox4.TabIndex = 21;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Datos del envío";
+            this.grpDatosEnvio.Controls.Add(this.lblCostoEnvio);
+            this.grpDatosEnvio.Controls.Add(this.lblPesoTotal);
+            this.grpDatosEnvio.Controls.Add(this.cboEnvSucOrigen);
+            this.grpDatosEnvio.Controls.Add(this.lblEnvRemitente);
+            this.grpDatosEnvio.Controls.Add(this.lblEnvDestinatario);
+            this.grpDatosEnvio.Controls.Add(this.txtEnvObservaciones);
+            this.grpDatosEnvio.Controls.Add(this.lblEnvSucOrigen);
+            this.grpDatosEnvio.Controls.Add(this.nudEnvContraEntrega);
+            this.grpDatosEnvio.Controls.Add(this.lblEnvContraEntrega);
+            this.grpDatosEnvio.Controls.Add(this.cboEnvServicio);
+            this.grpDatosEnvio.Controls.Add(this.lblEnvServicio);
+            this.grpDatosEnvio.Controls.Add(this.cboEnvSucDestino);
+            this.grpDatosEnvio.Controls.Add(this.lblEnvSucDestino);
+            this.grpDatosEnvio.Controls.Add(this.lblEnvObservaciones);
+            this.grpDatosEnvio.Controls.Add(this.cboEnvDestinatario);
+            this.grpDatosEnvio.Controls.Add(this.cboEnvRemitente);
+            this.grpDatosEnvio.Location = new System.Drawing.Point(15, 9);
+            this.grpDatosEnvio.Name = "grpDatosEnvio";
+            this.grpDatosEnvio.Size = new System.Drawing.Size(429, 316);
+            this.grpDatosEnvio.TabIndex = 21;
+            this.grpDatosEnvio.TabStop = false;
+            this.grpDatosEnvio.Text = "Datos del envío";
             // 
             // lblCostoEnvio
             // 
@@ -360,23 +360,23 @@
             this.cboEnvSucOrigen.Size = new System.Drawing.Size(121, 25);
             this.cboEnvSucOrigen.TabIndex = 10;
             // 
-            // label12
+            // lblEnvRemitente
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 30);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 19);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Remitente:";
+            this.lblEnvRemitente.AutoSize = true;
+            this.lblEnvRemitente.Location = new System.Drawing.Point(8, 30);
+            this.lblEnvRemitente.Name = "lblEnvRemitente";
+            this.lblEnvRemitente.Size = new System.Drawing.Size(74, 19);
+            this.lblEnvRemitente.TabIndex = 1;
+            this.lblEnvRemitente.Text = "Remitente:";
             // 
-            // label13
+            // lblEnvDestinatario
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(215, 30);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 19);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Destinatario:";
+            this.lblEnvDestinatario.AutoSize = true;
+            this.lblEnvDestinatario.Location = new System.Drawing.Point(215, 30);
+            this.lblEnvDestinatario.Name = "lblEnvDestinatario";
+            this.lblEnvDestinatario.Size = new System.Drawing.Size(86, 19);
+            this.lblEnvDestinatario.TabIndex = 2;
+            this.lblEnvDestinatario.Text = "Destinatario:";
             // 
             // txtEnvObservaciones
             // 
@@ -385,14 +385,14 @@
             this.txtEnvObservaciones.Size = new System.Drawing.Size(209, 25);
             this.txtEnvObservaciones.TabIndex = 14;
             // 
-            // label14
+            // lblEnvSucOrigen
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 19);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Suc. origen:";
+            this.lblEnvSucOrigen.AutoSize = true;
+            this.lblEnvSucOrigen.Location = new System.Drawing.Point(7, 69);
+            this.lblEnvSucOrigen.Name = "lblEnvSucOrigen";
+            this.lblEnvSucOrigen.Size = new System.Drawing.Size(79, 19);
+            this.lblEnvSucOrigen.TabIndex = 3;
+            this.lblEnvSucOrigen.Text = "Suc. origen:";
             // 
             // nudEnvContraEntrega
             // 
@@ -401,14 +401,14 @@
             this.nudEnvContraEntrega.Size = new System.Drawing.Size(119, 25);
             this.nudEnvContraEntrega.TabIndex = 13;
             // 
-            // label15
+            // lblEnvContraEntrega
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(216, 66);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(85, 19);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Suc. destino:";
+            this.lblEnvContraEntrega.AutoSize = true;
+            this.lblEnvContraEntrega.Location = new System.Drawing.Point(216, 66);
+            this.lblEnvContraEntrega.Name = "lblEnvContraEntrega";
+            this.lblEnvContraEntrega.Size = new System.Drawing.Size(105, 19);
+            this.lblEnvContraEntrega.TabIndex = 4;
+            this.lblEnvContraEntrega.Text = "Contra entrega:";
             // 
             // cboEnvServicio
             // 
@@ -419,14 +419,14 @@
             this.cboEnvServicio.TabIndex = 12;
             this.cboEnvServicio.SelectedIndexChanged += new System.EventHandler(this.cboEnvServicio_SelectedIndexChanged);
             // 
-            // label16
+            // lblEnvServicio
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 107);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 19);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Servicio:";
+            this.lblEnvServicio.AutoSize = true;
+            this.lblEnvServicio.Location = new System.Drawing.Point(8, 107);
+            this.lblEnvServicio.Name = "lblEnvServicio";
+            this.lblEnvServicio.Size = new System.Drawing.Size(58, 19);
+            this.lblEnvServicio.TabIndex = 5;
+            this.lblEnvServicio.Text = "Servicio:";
             // 
             // cboEnvSucDestino
             // 
@@ -436,23 +436,23 @@
             this.cboEnvSucDestino.Size = new System.Drawing.Size(121, 25);
             this.cboEnvSucDestino.TabIndex = 11;
             // 
-            // label17
+            // lblEnvSucDestino
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 152);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(105, 19);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Contra entrega:";
+            this.lblEnvSucDestino.AutoSize = true;
+            this.lblEnvSucDestino.Location = new System.Drawing.Point(8, 152);
+            this.lblEnvSucDestino.Name = "lblEnvSucDestino";
+            this.lblEnvSucDestino.Size = new System.Drawing.Size(85, 19);
+            this.lblEnvSucDestino.TabIndex = 6;
+            this.lblEnvSucDestino.Text = "Suc. destino:";
             // 
-            // label18
+            // lblEnvObservaciones
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 194);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 19);
-            this.label18.TabIndex = 7;
-            this.label18.Text = "Observaciones:";
+            this.lblEnvObservaciones.AutoSize = true;
+            this.lblEnvObservaciones.Location = new System.Drawing.Point(7, 194);
+            this.lblEnvObservaciones.Name = "lblEnvObservaciones";
+            this.lblEnvObservaciones.Size = new System.Drawing.Size(101, 19);
+            this.lblEnvObservaciones.TabIndex = 7;
+            this.lblEnvObservaciones.Text = "Observaciones:";
             // 
             // cboEnvDestinatario
             // 
@@ -473,7 +473,7 @@
             // 
             // tabEnviosRegistrados
             // 
-            this.tabEnviosRegistrados.Controls.Add(this.groupBox2);
+            this.tabEnviosRegistrados.Controls.Add(this.grpEnviosRegistrados);
             this.tabEnviosRegistrados.Location = new System.Drawing.Point(4, 26);
             this.tabEnviosRegistrados.Name = "tabEnviosRegistrados";
             this.tabEnviosRegistrados.Padding = new System.Windows.Forms.Padding(3);
@@ -494,18 +494,18 @@
             this.Name = "frmEnvios";
             this.Text = "frmEnvios";
             this.Load += new System.EventHandler(this.frmEnvios_Load);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpEnviosRegistrados.ResumeLayout(false);
+            this.grpEnviosRegistrados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).EndInit();
             this.tabEnvios.ResumeLayout(false);
             this.tabNuevoEnvio.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpPaquetes.ResumeLayout(false);
+            this.grpPaquetes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPaqValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPaqPeso)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.grpDatosEnvio.ResumeLayout(false);
+            this.grpDatosEnvio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEnvContraEntrega)).EndInit();
             this.tabEnviosRegistrados.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -513,39 +513,39 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpEnviosRegistrados;
         private System.Windows.Forms.Button btnCancelarEnvio;
         private System.Windows.Forms.TextBox txtEnvBuscar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEnvBuscar;
         private System.Windows.Forms.DataGridView dgvEnvios;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.TabControl tabEnvios;
         private System.Windows.Forms.TabPage tabNuevoEnvio;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grpDatosEnvio;
         private System.Windows.Forms.ComboBox cboEnvSucOrigen;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblEnvRemitente;
+        private System.Windows.Forms.Label lblEnvDestinatario;
         private System.Windows.Forms.TextBox txtEnvObservaciones;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblEnvSucOrigen;
         private System.Windows.Forms.NumericUpDown nudEnvContraEntrega;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblEnvContraEntrega;
         private System.Windows.Forms.ComboBox cboEnvServicio;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblEnvServicio;
         private System.Windows.Forms.ComboBox cboEnvSucDestino;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblEnvSucDestino;
+        private System.Windows.Forms.Label lblEnvObservaciones;
         private System.Windows.Forms.ComboBox cboEnvDestinatario;
         private System.Windows.Forms.ComboBox cboEnvRemitente;
         private System.Windows.Forms.TabPage tabEnviosRegistrados;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpPaquetes;
         private System.Windows.Forms.Button btnPaqAgregar;
         private System.Windows.Forms.CheckBox chkPaqFragil;
         private System.Windows.Forms.NumericUpDown nudPaqValor;
         private System.Windows.Forms.NumericUpDown nudPaqPeso;
         private System.Windows.Forms.TextBox txtPaqDescripcion;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPaqValor;
+        private System.Windows.Forms.Label lblPaqPeso;
+        private System.Windows.Forms.Label lblPaqDescripcion;
         private System.Windows.Forms.Button btnPaqQuitar;
         private System.Windows.Forms.DataGridView dgvPaquetes;
         private System.Windows.Forms.Button btnLimpiarEnvio;

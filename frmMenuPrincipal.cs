@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,7 +43,6 @@ namespace EnviosExpress
         {
             lblBienvenida.Text = "Bienvenido, " + Sesion.NombreCompleto + " (" + Sesion.Rol + ")";
 
-            // Solo el Admin ve estos módulos
             bool esAdmin = Sesion.Rol == "Admin";
             btnUsuarios.Visible = esAdmin;
             btnBitacora.Visible = esAdmin;

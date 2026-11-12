@@ -32,15 +32,15 @@
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.dgvReportes = new System.Windows.Forms.DataGridView();
             this.lblTotalRegistros = new System.Windows.Forms.Label();
             this.lblTotalIngresos = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblTituloReportes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,18 +81,18 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // button2
+            // btnLimpiar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(679, 69);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 35);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(679, 69);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(74, 35);
+            this.btnLimpiar.TabIndex = 4;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnVolver
             // 
@@ -150,24 +150,24 @@
             this.lblHasta.TabIndex = 9;
             this.lblHasta.Text = "Hasta:";
             // 
-            // label5
+            // lblEstado
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(410, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 19);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Estado:";
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(410, 75);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(53, 19);
+            this.lblEstado.TabIndex = 10;
+            this.lblEstado.Text = "Estado:";
             // 
-            // label1
+            // lblTituloReportes
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Panel de Reportes";
+            this.lblTituloReportes.AutoSize = true;
+            this.lblTituloReportes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReportes.Location = new System.Drawing.Point(33, 9);
+            this.lblTituloReportes.Name = "lblTituloReportes";
+            this.lblTituloReportes.Size = new System.Drawing.Size(173, 25);
+            this.lblTituloReportes.TabIndex = 11;
+            this.lblTituloReportes.Text = "Panel de Reportes";
             // 
             // frmReportes
             // 
@@ -175,15 +175,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTituloReportes);
+            this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.lblDesde);
             this.Controls.Add(this.lblTotalIngresos);
             this.Controls.Add(this.lblTotalRegistros);
             this.Controls.Add(this.dgvReportes);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.dtpFechaFin);
@@ -204,14 +204,14 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridView dgvReportes;
         private System.Windows.Forms.Label lblTotalRegistros;
         private System.Windows.Forms.Label lblTotalIngresos;
         private System.Windows.Forms.Label lblDesde;
         private System.Windows.Forms.Label lblHasta;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblTituloReportes;
     }
 }

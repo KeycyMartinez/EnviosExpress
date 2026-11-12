@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +14,6 @@ namespace EnviosExpress
     {
         private SeguimientoBD seguimientoBD = new SeguimientoBD();
 
-        // Datos del envío que se está mostrando
         private int idEnvioSel = 0;
         private string guiaSel = "";
         private string estadoActual = "";
@@ -76,9 +75,7 @@ namespace EnviosExpress
             this.Close();
         }
 
-        // ===================== BUSCAR UN ENVÍO =====================
 
-        // Acepta "EE-000007" o solo "7"
         private string NormalizarGuia(string texto)
         {
             texto = texto.Trim().ToUpper();
@@ -163,9 +160,7 @@ namespace EnviosExpress
             }
         }
 
-        // ===================== REGLAS DE LOS ESTADOS =====================
 
-        // A qué estados puede pasar un envío según el estado en que está
         private string[] EstadosPermitidos(string estado)
         {
             switch (estado)
@@ -181,7 +176,6 @@ namespace EnviosExpress
                 case "Intento fallido":
                     return new string[] { "En reparto", "Devuelto" };
                 default:
-                    // Entregado, Devuelto y Cancelado son estados finales
                     return new string[] { };
             }
         }
@@ -205,7 +199,6 @@ namespace EnviosExpress
             cboSegEstado.DataSource = permitidos;
             cboSegEstado.SelectedIndex = -1;
 
-            // Si el envío ya tenía repartidor, se propone el mismo
             if (fila["IdRepartidor"] != DBNull.Value)
             {
                 cboSegRepartidor.SelectedValue = Convert.ToInt32(fila["IdRepartidor"]);
@@ -216,14 +209,12 @@ namespace EnviosExpress
             }
         }
 
-        // El repartidor solo se pide cuando el nuevo estado es "En reparto"
         private void cboSegEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             string estado = cboSegEstado.SelectedItem as string;
             cboSegRepartidor.Enabled = (estado == "En reparto");
         }
 
-        // ===================== REGISTRAR EL MOVIMIENTO =====================
 
         private void btnSegRegistrar_Click(object sender, EventArgs e)
         {
@@ -240,7 +231,6 @@ namespace EnviosExpress
                 return;
             }
 
-            // En reparto: obligatorio elegir repartidor
             int? idRepartidor = null;
             if (nuevoEstado == "En reparto")
             {
@@ -252,7 +242,6 @@ namespace EnviosExpress
                 idRepartidor = Convert.ToInt32(cboSegRepartidor.SelectedValue);
             }
 
-            // Intento fallido: obligatorio explicar el motivo
             if (nuevoEstado == "Intento fallido" && string.IsNullOrWhiteSpace(txtSegNota.Text))
             {
                 MessageBox.Show("Escriba el motivo del intento fallido en la nota.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -260,7 +249,6 @@ namespace EnviosExpress
                 return;
             }
 
-            // Estados finales: pedir confirmación
             if (nuevoEstado == "Entregado" || nuevoEstado == "Devuelto")
             {
                 DialogResult r = MessageBox.Show("¿Marcar el envío " + guiaSel + " como " + nuevoEstado + "?\nDespués no se podrá cambiar su estado.",
@@ -268,7 +256,6 @@ namespace EnviosExpress
                 if (r != DialogResult.Yes) return;
             }
 
-            // Sucursal donde ocurre el movimiento (en tránsito no hay sucursal)
             int? idSucursal = null;
             switch (nuevoEstado)
             {

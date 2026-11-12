@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,7 +6,6 @@ namespace EnviosExpress
 {
     public class SeguimientoBD
     {
-        // Busca un envío por su guía y trae todos los datos que muestra la pantalla (JOIN de 7 tablas)
         public DataTable ObtenerEnvioPorGuia(string guia)
         {
             ConexionBD conexion = new ConexionBD();
@@ -43,7 +42,6 @@ namespace EnviosExpress
             }
         }
 
-        // Historial de movimientos del envío, del más antiguo al más reciente
         public DataTable ObtenerHistorial(int idEnvio)
         {
             ConexionBD conexion = new ConexionBD();
@@ -92,9 +90,6 @@ namespace EnviosExpress
             }
         }
 
-        // UPDATE: cambia el estado del envío y deja el movimiento en el historial.
-        // Las dos operaciones van en una transacción.
-        // Devuelve false si el envío ya no estaba en "estadoAnterior" (alguien lo cambió antes).
         public bool RegistrarMovimiento(int idEnvio, string estadoAnterior, string estadoNuevo,
                                         int? idSucursal, int? idRepartidor, string nota, int idUsuario)
         {
@@ -104,8 +99,6 @@ namespace EnviosExpress
 
             try
             {
-                // 1) Actualizar el envío. COALESCE conserva el repartidor actual si no se envía uno nuevo.
-                //    Al marcar "Entregado" se guarda la fecha de entrega.
                 string sqlUpdate = "UPDATE Envios SET EstadoActual = @nuevo, " +
                                    "IdRepartidor = COALESCE(@rep, IdRepartidor), " +
                                    "FechaEntrega = CASE WHEN @nuevo = 'Entregado' THEN GETDATE() ELSE FechaEntrega END " +
@@ -124,7 +117,6 @@ namespace EnviosExpress
                     return false;
                 }
 
-                // 2) Registrar el movimiento en el historial
                 string sqlSeg = "INSERT INTO SeguimientoEnvio (IdEnvio, Estado, IdSucursal, IdUsuario, Nota) " +
                                 "VALUES (@id, @estado, @suc, @usuario, @nota)";
 
