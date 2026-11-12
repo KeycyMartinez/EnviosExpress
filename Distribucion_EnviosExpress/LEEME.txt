@@ -1,6 +1,0 @@
-﻿EnviosExpress
-
-Ejecuta EnviosExpress.exe.
-Las imagenes del menu estan incrustadas en el ejecutable.
-
-Requisito: SQL Server debe estar disponible en localhost y la base de datos EnviosExpressDB debe existir.
