@@ -67,7 +67,7 @@
             this.cboEnvDestinatario = new System.Windows.Forms.ComboBox();
             this.cboEnvRemitente = new System.Windows.Forms.ComboBox();
             this.tabEnviosRegistrados = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTituloEnvios = new System.Windows.Forms.Label();
             this.grpEnviosRegistrados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnvios)).BeginInit();
             this.tabEnvios.SuspendLayout();
@@ -137,9 +137,9 @@
             // 
             this.btnVolver.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Location = new System.Drawing.Point(978, 511);
+            this.btnVolver.Location = new System.Drawing.Point(978, 506);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(90, 29);
+            this.btnVolver.Size = new System.Drawing.Size(90, 34);
             this.btnVolver.TabIndex = 21;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -483,15 +483,15 @@
             this.tabEnviosRegistrados.Text = "Envíos registrados";
             this.tabEnviosRegistrados.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblTituloEnvios
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 32);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Gestión de Envíos";
+            this.lblTituloEnvios.AutoSize = true;
+            this.lblTituloEnvios.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEnvios.Location = new System.Drawing.Point(6, 9);
+            this.lblTituloEnvios.Name = "lblTituloEnvios";
+            this.lblTituloEnvios.Size = new System.Drawing.Size(217, 32);
+            this.lblTituloEnvios.TabIndex = 23;
+            this.lblTituloEnvios.Text = "Gestión de Envíos";
             // 
             // frmEnvios
             // 
@@ -499,7 +499,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 561);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTituloEnvios);
             this.Controls.Add(this.tabEnvios);
             this.Controls.Add(this.btnVolver);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -565,6 +565,6 @@
         private System.Windows.Forms.Button btnGuardarEnvio;
         private System.Windows.Forms.Label lblCostoEnvio;
         private System.Windows.Forms.Label lblPesoTotal;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTituloEnvios;
     }
 }

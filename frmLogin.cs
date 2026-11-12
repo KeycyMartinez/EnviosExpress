@@ -58,6 +58,7 @@ namespace EnviosExpress
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsuario.Clear();
                     txtPassword.Clear();
                     txtUsuario.Focus();
                 }
