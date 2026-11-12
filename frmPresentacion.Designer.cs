@@ -133,7 +133,7 @@
             // btnContinuar
             // 
             this.btnContinuar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnContinuar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnContinuar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 90, 180);
             this.btnContinuar.FlatAppearance.BorderSize = 1;
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

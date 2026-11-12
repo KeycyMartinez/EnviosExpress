@@ -62,26 +62,55 @@ namespace EnviosExpress
             Button boton = control as Button;
             if (boton != null)
             {
-                bool esAzul = boton.BackColor == Color.DodgerBlue;
+                Color colorAccion;
+                bool esAccion = ObtenerColorAccion(boton.Text, out colorAccion);
+                if (esAccion)
+                    boton.BackColor = colorAccion;
+
+                Color colorBase = boton.BackColor;
+                Color colorBorde = ControlPaint.Dark(colorBase, 0.35f);
+                Color colorHover = ControlPaint.Light(colorBase, 0.15f);
+                Color colorPresionado = ControlPaint.Dark(colorBase, 0.15f);
+                bool textoClaro = esAccion || colorBase.GetBrightness() < 0.7f;
                 boton.Font = new Font("Segoe UI", boton.Font.Size >= 14F ? 14F : 10F, FontStyle.Bold);
                 boton.FlatStyle = FlatStyle.Flat;
                 boton.FlatAppearance.BorderSize = 2;
-                boton.FlatAppearance.BorderColor = esAzul
-                    ? Color.FromArgb(0, 90, 180)
-                    : Color.FromArgb(80, 80, 80);
-                boton.BackColor = esAzul ? Color.DodgerBlue : Color.White;
-                boton.ForeColor = esAzul ? Color.White : Color.Black;
-                boton.FlatAppearance.MouseOverBackColor = esAzul
-                    ? Color.FromArgb(24, 132, 220)
-                    : Color.FromArgb(235, 242, 250);
-                boton.FlatAppearance.MouseDownBackColor = esAzul
-                    ? Color.FromArgb(20, 115, 195)
-                    : Color.FromArgb(220, 232, 245);
+                boton.FlatAppearance.BorderColor = colorBorde;
+                boton.BackColor = colorBase;
+                boton.ForeColor = textoClaro ? Color.White : Color.Black;
+                boton.FlatAppearance.MouseOverBackColor = colorHover;
+                boton.FlatAppearance.MouseDownBackColor = colorPresionado;
                 boton.UseVisualStyleBackColor = false;
             }
 
-            ActualizarRegion(control);
-            control.Resize += (sender, args) => ActualizarRegion(control);
+            if (!(control is Button))
+            {
+                ActualizarRegion(control);
+                control.Resize += (sender, args) => ActualizarRegion(control);
+            }
+        }
+
+        private static bool ObtenerColorAccion(string texto, out Color color)
+        {
+            string accion = (texto ?? string.Empty).Trim().ToLowerInvariant();
+
+            if (accion.Contains("eliminar") || accion.Contains("cancelar") || accion.Contains("quitar"))
+                color = Color.FromArgb(211, 47, 47);
+            else if (accion.Contains("limpiar"))
+                color = Color.FromArgb(108, 117, 125);
+            else if (accion.Contains("modificar") || accion.Contains("volver"))
+                color = Color.FromArgb(25, 118, 210);
+            else if (accion.Contains("agregar") || accion.Contains("guardar") || accion.Contains("registrar"))
+                color = Color.FromArgb(40, 167, 69);
+            else if (accion.Contains("buscar") || accion.Contains("filtrar") || accion.Contains("actualizar"))
+                color = Color.FromArgb(3, 169, 244);
+            else
+            {
+                color = Color.Empty;
+                return false;
+            }
+
+            return true;
         }
 
         private static void ActualizarRegion(Control control)

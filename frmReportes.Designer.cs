@@ -40,36 +40,42 @@
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpFechaInicio
             // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(81, 65);
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(89, 72);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(117, 25);
             this.dtpFechaInicio.TabIndex = 0;
             // 
             // dtpFechaFin
             // 
-            this.dtpFechaFin.Location = new System.Drawing.Point(376, 65);
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(275, 72);
             this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(194, 20);
+            this.dtpFechaFin.Size = new System.Drawing.Size(113, 25);
             this.dtpFechaFin.TabIndex = 1;
             // 
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(645, 68);
+            this.cmbEstado.Location = new System.Drawing.Point(469, 72);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(105, 25);
             this.cmbEstado.TabIndex = 2;
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(37, 403);
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
+            this.btnFiltrar.Location = new System.Drawing.Point(592, 69);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(72, 22);
+            this.btnFiltrar.Size = new System.Drawing.Size(72, 35);
             this.btnFiltrar.TabIndex = 3;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -77,84 +83,99 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(145, 403);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(679, 69);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 22);
+            this.button2.Size = new System.Drawing.Size(74, 35);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Limpiar filtros";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(690, 403);
+            this.btnVolver.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Location = new System.Drawing.Point(676, 403);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(89, 35);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // dgvReportes
             // 
             this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReportes.Location = new System.Drawing.Point(37, 102);
+            this.dgvReportes.Location = new System.Drawing.Point(38, 117);
             this.dgvReportes.Name = "dgvReportes";
-            this.dgvReportes.Size = new System.Drawing.Size(413, 268);
+            this.dgvReportes.Size = new System.Drawing.Size(626, 268);
             this.dgvReportes.TabIndex = 5;
             // 
             // lblTotalRegistros
             // 
             this.lblTotalRegistros.AutoSize = true;
-            this.lblTotalRegistros.Location = new System.Drawing.Point(34, 31);
+            this.lblTotalRegistros.Location = new System.Drawing.Point(33, 40);
             this.lblTotalRegistros.Name = "lblTotalRegistros";
-            this.lblTotalRegistros.Size = new System.Drawing.Size(90, 13);
+            this.lblTotalRegistros.Size = new System.Drawing.Size(115, 19);
             this.lblTotalRegistros.TabIndex = 6;
             this.lblTotalRegistros.Text = "Total de reportes:";
             // 
             // lblTotalIngresos
             // 
             this.lblTotalIngresos.AutoSize = true;
-            this.lblTotalIngresos.Location = new System.Drawing.Point(258, 31);
+            this.lblTotalIngresos.Location = new System.Drawing.Point(273, 40);
             this.lblTotalIngresos.Name = "lblTotalIngresos";
-            this.lblTotalIngresos.Size = new System.Drawing.Size(91, 13);
+            this.lblTotalIngresos.Size = new System.Drawing.Size(115, 19);
             this.lblTotalIngresos.TabIndex = 7;
             this.lblTotalIngresos.Text = "Total de ingresos:";
             // 
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(34, 65);
+            this.lblDesde.Location = new System.Drawing.Point(33, 72);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(41, 13);
+            this.lblDesde.Size = new System.Drawing.Size(50, 19);
             this.lblDesde.TabIndex = 8;
             this.lblDesde.Text = "Desde:";
             // 
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(332, 68);
+            this.lblHasta.Location = new System.Drawing.Point(222, 75);
             this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(38, 13);
+            this.lblHasta.Size = new System.Drawing.Size(47, 19);
             this.lblHasta.TabIndex = 9;
             this.lblHasta.Text = "Hasta:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(596, 71);
+            this.label5.Location = new System.Drawing.Point(410, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(53, 19);
             this.label5.TabIndex = 10;
             this.label5.Text = "Estado:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Panel de Reportes";
+            // 
             // frmReportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.lblDesde);
@@ -167,6 +188,7 @@
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dtpFechaInicio);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmReportes";
             this.Text = "frmReportes";
             this.Load += new System.EventHandler(this.frmReportes_Load);
@@ -190,5 +212,6 @@
         private System.Windows.Forms.Label lblDesde;
         private System.Windows.Forms.Label lblHasta;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -96,7 +96,7 @@
             // dgvEnvios
             // 
             this.dgvEnvios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEnvios.Location = new System.Drawing.Point(23, 77);
+            this.dgvEnvios.Location = new System.Drawing.Point(24, 77);
             this.dgvEnvios.Name = "dgvEnvios";
             this.dgvEnvios.Size = new System.Drawing.Size(839, 249);
             this.dgvEnvios.TabIndex = 3;
@@ -104,9 +104,12 @@
             // 
             // btnCancelarEnvio
             // 
-            this.btnCancelarEnvio.Location = new System.Drawing.Point(294, 34);
+            this.btnCancelarEnvio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnCancelarEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarEnvio.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarEnvio.Location = new System.Drawing.Point(24, 332);
             this.btnCancelarEnvio.Name = "btnCancelarEnvio";
-            this.btnCancelarEnvio.Size = new System.Drawing.Size(105, 25);
+            this.btnCancelarEnvio.Size = new System.Drawing.Size(125, 35);
             this.btnCancelarEnvio.TabIndex = 2;
             this.btnCancelarEnvio.Text = "Cancelar envío";
             this.btnCancelarEnvio.UseVisualStyleBackColor = true;
@@ -114,16 +117,16 @@
             // 
             // txtEnvBuscar
             // 
-            this.txtEnvBuscar.Location = new System.Drawing.Point(69, 39);
+            this.txtEnvBuscar.Location = new System.Drawing.Point(80, 34);
             this.txtEnvBuscar.Name = "txtEnvBuscar";
-            this.txtEnvBuscar.Size = new System.Drawing.Size(100, 25);
+            this.txtEnvBuscar.Size = new System.Drawing.Size(176, 25);
             this.txtEnvBuscar.TabIndex = 1;
             this.txtEnvBuscar.TextChanged += new System.EventHandler(this.txtEnvBuscar_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 39);
+            this.label1.Location = new System.Drawing.Point(22, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 19);
             this.label1.TabIndex = 0;
@@ -131,12 +134,14 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(1000, 476);
+            this.btnVolver.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Location = new System.Drawing.Point(982, 470);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(90, 29);
             this.btnVolver.TabIndex = 21;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // tabEnvios
@@ -146,7 +151,7 @@
             this.tabEnvios.Location = new System.Drawing.Point(12, 12);
             this.tabEnvios.Name = "tabEnvios";
             this.tabEnvios.SelectedIndex = 0;
-            this.tabEnvios.Size = new System.Drawing.Size(1060, 429);
+            this.tabEnvios.Size = new System.Drawing.Size(1060, 436);
             this.tabEnvios.TabIndex = 22;
             // 
             // tabNuevoEnvio
@@ -158,16 +163,19 @@
             this.tabNuevoEnvio.Location = new System.Drawing.Point(4, 26);
             this.tabNuevoEnvio.Name = "tabNuevoEnvio";
             this.tabNuevoEnvio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNuevoEnvio.Size = new System.Drawing.Size(1052, 399);
+            this.tabNuevoEnvio.Size = new System.Drawing.Size(1052, 406);
             this.tabNuevoEnvio.TabIndex = 0;
             this.tabNuevoEnvio.Text = "Nuevo envío";
             this.tabNuevoEnvio.UseVisualStyleBackColor = true;
             // 
             // btnGuardarEnvio
             // 
-            this.btnGuardarEnvio.Location = new System.Drawing.Point(15, 331);
+            this.btnGuardarEnvio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnGuardarEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEnvio.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarEnvio.Location = new System.Drawing.Point(15, 345);
             this.btnGuardarEnvio.Name = "btnGuardarEnvio";
-            this.btnGuardarEnvio.Size = new System.Drawing.Size(135, 23);
+            this.btnGuardarEnvio.Size = new System.Drawing.Size(145, 39);
             this.btnGuardarEnvio.TabIndex = 10;
             this.btnGuardarEnvio.Text = "Guardar envío";
             this.btnGuardarEnvio.UseVisualStyleBackColor = true;
@@ -194,9 +202,12 @@
             // 
             // btnPaqQuitar
             // 
+            this.btnPaqQuitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnPaqQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPaqQuitar.ForeColor = System.Drawing.Color.White;
             this.btnPaqQuitar.Location = new System.Drawing.Point(207, 144);
             this.btnPaqQuitar.Name = "btnPaqQuitar";
-            this.btnPaqQuitar.Size = new System.Drawing.Size(126, 23);
+            this.btnPaqQuitar.Size = new System.Drawing.Size(140, 33);
             this.btnPaqQuitar.TabIndex = 9;
             this.btnPaqQuitar.Text = "Quitar paquete";
             this.btnPaqQuitar.UseVisualStyleBackColor = true;
@@ -206,17 +217,20 @@
             // 
             this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaquetes.Location = new System.Drawing.Point(18, 183);
+            this.dgvPaquetes.Location = new System.Drawing.Point(18, 194);
             this.dgvPaquetes.Name = "dgvPaquetes";
             this.dgvPaquetes.RowHeadersVisible = false;
-            this.dgvPaquetes.Size = new System.Drawing.Size(348, 127);
+            this.dgvPaquetes.Size = new System.Drawing.Size(329, 104);
             this.dgvPaquetes.TabIndex = 8;
             // 
             // btnPaqAgregar
             // 
-            this.btnPaqAgregar.Location = new System.Drawing.Point(18, 144);
+            this.btnPaqAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnPaqAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPaqAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnPaqAgregar.Location = new System.Drawing.Point(19, 144);
             this.btnPaqAgregar.Name = "btnPaqAgregar";
-            this.btnPaqAgregar.Size = new System.Drawing.Size(139, 23);
+            this.btnPaqAgregar.Size = new System.Drawing.Size(145, 33);
             this.btnPaqAgregar.TabIndex = 7;
             this.btnPaqAgregar.Text = "Agregar paquete";
             this.btnPaqAgregar.UseVisualStyleBackColor = true;
@@ -227,7 +241,7 @@
             this.chkPaqFragil.AutoSize = true;
             this.chkPaqFragil.Checked = true;
             this.chkPaqFragil.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkPaqFragil.Location = new System.Drawing.Point(247, 105);
+            this.chkPaqFragil.Location = new System.Drawing.Point(286, 105);
             this.chkPaqFragil.Name = "chkPaqFragil";
             this.chkPaqFragil.Size = new System.Drawing.Size(61, 23);
             this.chkPaqFragil.TabIndex = 6;
@@ -236,23 +250,23 @@
             // 
             // nudPaqValor
             // 
-            this.nudPaqValor.Location = new System.Drawing.Point(87, 103);
+            this.nudPaqValor.Location = new System.Drawing.Point(103, 105);
             this.nudPaqValor.Name = "nudPaqValor";
             this.nudPaqValor.Size = new System.Drawing.Size(120, 25);
             this.nudPaqValor.TabIndex = 5;
             // 
             // nudPaqPeso
             // 
-            this.nudPaqPeso.Location = new System.Drawing.Point(87, 66);
+            this.nudPaqPeso.Location = new System.Drawing.Point(103, 66);
             this.nudPaqPeso.Name = "nudPaqPeso";
             this.nudPaqPeso.Size = new System.Drawing.Size(120, 25);
             this.nudPaqPeso.TabIndex = 4;
             // 
             // txtPaqDescripcion
             // 
-            this.txtPaqDescripcion.Location = new System.Drawing.Point(87, 30);
+            this.txtPaqDescripcion.Location = new System.Drawing.Point(103, 30);
             this.txtPaqDescripcion.Name = "txtPaqDescripcion";
-            this.txtPaqDescripcion.Size = new System.Drawing.Size(100, 25);
+            this.txtPaqDescripcion.Size = new System.Drawing.Size(221, 25);
             this.txtPaqDescripcion.TabIndex = 3;
             // 
             // label4
@@ -284,12 +298,15 @@
             // 
             // btnLimpiarEnvio
             // 
-            this.btnLimpiarEnvio.Location = new System.Drawing.Point(177, 331);
+            this.btnLimpiarEnvio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.btnLimpiarEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarEnvio.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarEnvio.Location = new System.Drawing.Point(176, 345);
             this.btnLimpiarEnvio.Name = "btnLimpiarEnvio";
-            this.btnLimpiarEnvio.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiarEnvio.Size = new System.Drawing.Size(90, 39);
             this.btnLimpiarEnvio.TabIndex = 11;
             this.btnLimpiarEnvio.Text = "Limpiar";
-            this.btnLimpiarEnvio.UseVisualStyleBackColor = true;
+            this.btnLimpiarEnvio.UseVisualStyleBackColor = false;
             this.btnLimpiarEnvio.Click += new System.EventHandler(this.btnLimpiarEnvio_Click);
             // 
             // groupBox4
@@ -312,7 +329,7 @@
             this.groupBox4.Controls.Add(this.cboEnvRemitente);
             this.groupBox4.Location = new System.Drawing.Point(15, 9);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(423, 316);
+            this.groupBox4.Size = new System.Drawing.Size(429, 316);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos del envío";
@@ -320,7 +337,7 @@
             // lblCostoEnvio
             // 
             this.lblCostoEnvio.AutoSize = true;
-            this.lblCostoEnvio.Location = new System.Drawing.Point(193, 246);
+            this.lblCostoEnvio.Location = new System.Drawing.Point(9, 279);
             this.lblCostoEnvio.Name = "lblCostoEnvio";
             this.lblCostoEnvio.Size = new System.Drawing.Size(104, 19);
             this.lblCostoEnvio.TabIndex = 16;
@@ -329,7 +346,7 @@
             // lblPesoTotal
             // 
             this.lblPesoTotal.AutoSize = true;
-            this.lblPesoTotal.Location = new System.Drawing.Point(22, 246);
+            this.lblPesoTotal.Location = new System.Drawing.Point(8, 248);
             this.lblPesoTotal.Name = "lblPesoTotal";
             this.lblPesoTotal.Size = new System.Drawing.Size(72, 19);
             this.lblPesoTotal.TabIndex = 15;
@@ -338,7 +355,7 @@
             // cboEnvSucOrigen
             // 
             this.cboEnvSucOrigen.FormattingEnabled = true;
-            this.cboEnvSucOrigen.Location = new System.Drawing.Point(92, 58);
+            this.cboEnvSucOrigen.Location = new System.Drawing.Point(88, 66);
             this.cboEnvSucOrigen.Name = "cboEnvSucOrigen";
             this.cboEnvSucOrigen.Size = new System.Drawing.Size(121, 25);
             this.cboEnvSucOrigen.TabIndex = 10;
@@ -346,7 +363,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(20, 18);
+            this.label12.Location = new System.Drawing.Point(8, 30);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 19);
             this.label12.TabIndex = 1;
@@ -355,7 +372,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(222, 21);
+            this.label13.Location = new System.Drawing.Point(215, 30);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 19);
             this.label13.TabIndex = 2;
@@ -363,15 +380,15 @@
             // 
             // txtEnvObservaciones
             // 
-            this.txtEnvObservaciones.Location = new System.Drawing.Point(108, 180);
+            this.txtEnvObservaciones.Location = new System.Drawing.Point(119, 194);
             this.txtEnvObservaciones.Name = "txtEnvObservaciones";
-            this.txtEnvObservaciones.Size = new System.Drawing.Size(100, 25);
+            this.txtEnvObservaciones.Size = new System.Drawing.Size(209, 25);
             this.txtEnvObservaciones.TabIndex = 14;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(22, 61);
+            this.label14.Location = new System.Drawing.Point(7, 69);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(79, 19);
             this.label14.TabIndex = 3;
@@ -379,15 +396,15 @@
             // 
             // nudEnvContraEntrega
             // 
-            this.nudEnvContraEntrega.Location = new System.Drawing.Point(108, 142);
+            this.nudEnvContraEntrega.Location = new System.Drawing.Point(119, 152);
             this.nudEnvContraEntrega.Name = "nudEnvContraEntrega";
-            this.nudEnvContraEntrega.Size = new System.Drawing.Size(120, 25);
+            this.nudEnvContraEntrega.Size = new System.Drawing.Size(119, 25);
             this.nudEnvContraEntrega.TabIndex = 13;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(224, 61);
+            this.label15.Location = new System.Drawing.Point(216, 66);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(85, 19);
             this.label15.TabIndex = 4;
@@ -396,7 +413,7 @@
             // cboEnvServicio
             // 
             this.cboEnvServicio.FormattingEnabled = true;
-            this.cboEnvServicio.Location = new System.Drawing.Point(92, 100);
+            this.cboEnvServicio.Location = new System.Drawing.Point(88, 107);
             this.cboEnvServicio.Name = "cboEnvServicio";
             this.cboEnvServicio.Size = new System.Drawing.Size(121, 25);
             this.cboEnvServicio.TabIndex = 12;
@@ -405,7 +422,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(22, 103);
+            this.label16.Location = new System.Drawing.Point(8, 107);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 19);
             this.label16.TabIndex = 5;
@@ -414,7 +431,7 @@
             // cboEnvSucDestino
             // 
             this.cboEnvSucDestino.FormattingEnabled = true;
-            this.cboEnvSucDestino.Location = new System.Drawing.Point(294, 58);
+            this.cboEnvSucDestino.Location = new System.Drawing.Point(302, 65);
             this.cboEnvSucDestino.Name = "cboEnvSucDestino";
             this.cboEnvSucDestino.Size = new System.Drawing.Size(121, 25);
             this.cboEnvSucDestino.TabIndex = 11;
@@ -422,7 +439,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(22, 144);
+            this.label17.Location = new System.Drawing.Point(8, 152);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(105, 19);
             this.label17.TabIndex = 6;
@@ -431,7 +448,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(22, 183);
+            this.label18.Location = new System.Drawing.Point(7, 194);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(101, 19);
             this.label18.TabIndex = 7;
@@ -440,7 +457,7 @@
             // cboEnvDestinatario
             // 
             this.cboEnvDestinatario.FormattingEnabled = true;
-            this.cboEnvDestinatario.Location = new System.Drawing.Point(294, 18);
+            this.cboEnvDestinatario.Location = new System.Drawing.Point(302, 30);
             this.cboEnvDestinatario.Name = "cboEnvDestinatario";
             this.cboEnvDestinatario.Size = new System.Drawing.Size(121, 25);
             this.cboEnvDestinatario.TabIndex = 9;
@@ -449,7 +466,7 @@
             // cboEnvRemitente
             // 
             this.cboEnvRemitente.FormattingEnabled = true;
-            this.cboEnvRemitente.Location = new System.Drawing.Point(92, 18);
+            this.cboEnvRemitente.Location = new System.Drawing.Point(88, 30);
             this.cboEnvRemitente.Name = "cboEnvRemitente";
             this.cboEnvRemitente.Size = new System.Drawing.Size(121, 25);
             this.cboEnvRemitente.TabIndex = 8;
@@ -460,7 +477,7 @@
             this.tabEnviosRegistrados.Location = new System.Drawing.Point(4, 26);
             this.tabEnviosRegistrados.Name = "tabEnviosRegistrados";
             this.tabEnviosRegistrados.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEnviosRegistrados.Size = new System.Drawing.Size(1052, 399);
+            this.tabEnviosRegistrados.Size = new System.Drawing.Size(1052, 406);
             this.tabEnviosRegistrados.TabIndex = 1;
             this.tabEnviosRegistrados.Text = "Envíos registrados";
             this.tabEnviosRegistrados.UseVisualStyleBackColor = true;

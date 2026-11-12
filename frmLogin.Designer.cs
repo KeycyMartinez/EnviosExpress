@@ -89,7 +89,7 @@
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 90, 180);
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;

@@ -39,6 +39,7 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,66 +53,74 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(38, 400);
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(39, 398);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 25);
+            this.btnActualizar.Size = new System.Drawing.Size(101, 38);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
             // dtpFechaInicio
             // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(250, 82);
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(286, 71);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(118, 25);
             this.dtpFechaInicio.TabIndex = 2;
             // 
             // txtBuscarUsuario
             // 
-            this.txtBuscarUsuario.Location = new System.Drawing.Point(87, 82);
+            this.txtBuscarUsuario.Location = new System.Drawing.Point(99, 71);
             this.txtBuscarUsuario.Name = "txtBuscarUsuario";
-            this.txtBuscarUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscarUsuario.Size = new System.Drawing.Size(125, 25);
             this.txtBuscarUsuario.TabIndex = 3;
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(35, 85);
+            this.lblUsuario.Location = new System.Drawing.Point(37, 74);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(59, 19);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = "Usuario:";
             // 
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(203, 86);
+            this.lblDesde.Location = new System.Drawing.Point(230, 74);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(41, 13);
+            this.lblDesde.Size = new System.Drawing.Size(50, 19);
             this.lblDesde.TabIndex = 5;
             this.lblDesde.Text = "Desde:";
             // 
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(462, 86);
+            this.lblHasta.Location = new System.Drawing.Point(420, 74);
             this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(38, 13);
+            this.lblHasta.Size = new System.Drawing.Size(47, 19);
             this.lblHasta.TabIndex = 6;
             this.lblHasta.Text = "Hasta:";
             // 
             // dtpFechaFin
             // 
-            this.dtpFechaFin.Location = new System.Drawing.Point(503, 82);
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(473, 72);
             this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(198, 20);
+            this.dtpFechaFin.Size = new System.Drawing.Size(122, 25);
             this.dtpFechaFin.TabIndex = 7;
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(713, 81);
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
+            this.btnFiltrar.Location = new System.Drawing.Point(611, 71);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 29);
             this.btnFiltrar.TabIndex = 8;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -119,31 +128,46 @@
             // 
             // btnimpiar
             // 
-            this.btnimpiar.Location = new System.Drawing.Point(158, 402);
+            this.btnimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.btnimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnimpiar.Location = new System.Drawing.Point(705, 71);
             this.btnimpiar.Name = "btnimpiar";
-            this.btnimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnimpiar.Size = new System.Drawing.Size(75, 29);
             this.btnimpiar.TabIndex = 9;
             this.btnimpiar.Text = "Limpiar";
-            this.btnimpiar.UseVisualStyleBackColor = true;
+            this.btnimpiar.UseVisualStyleBackColor = false;
             this.btnimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(690, 402);
+            this.btnVolver.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Location = new System.Drawing.Point(703, 400);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(75, 36);
             this.btnVolver.TabIndex = 10;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 32);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Historial de Actividades";
             // 
             // frmBitacora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnimpiar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnFiltrar);
@@ -155,6 +179,7 @@
             this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvBitacora);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmBitacora";
             this.Text = "frmBitacora";
             this.Load += new System.EventHandler(this.frmBitacora_Load);
@@ -177,5 +202,6 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnimpiar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label label1;
     }
 }

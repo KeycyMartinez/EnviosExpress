@@ -18,6 +18,25 @@ namespace EnviosExpress
         {
             InitializeComponent();
             BordesRedondeados.Aplicar(this);
+            ConfigurarTarjetas();
+        }
+
+        private void ConfigurarTarjetas()
+        {
+            Button[] tarjetas = { btnClientes, btnEnvios, btnSeguimiento, btnReportes, btnUsuarios, btnBitacora };
+            foreach (Button tarjeta in tarjetas)
+            {
+                tarjeta.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+                tarjeta.ForeColor = Color.White;
+                tarjeta.FlatStyle = FlatStyle.Flat;
+                tarjeta.FlatAppearance.BorderSize = 3;
+                tarjeta.FlatAppearance.BorderColor = ControlPaint.Dark(tarjeta.BackColor, 0.35f);
+                tarjeta.TextImageRelation = TextImageRelation.Overlay;
+                tarjeta.TextAlign = ContentAlignment.MiddleCenter;
+                tarjeta.Padding = new Padding(8);
+            }
+
+            btnClientes.FlatAppearance.BorderSize = 2;
         }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
