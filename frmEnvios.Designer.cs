@@ -404,7 +404,7 @@
             // lblEnvContraEntrega
             // 
             this.lblEnvContraEntrega.AutoSize = true;
-            this.lblEnvContraEntrega.Location = new System.Drawing.Point(216, 66);
+            this.lblEnvContraEntrega.Location = new System.Drawing.Point(9, 154);
             this.lblEnvContraEntrega.Name = "lblEnvContraEntrega";
             this.lblEnvContraEntrega.Size = new System.Drawing.Size(105, 19);
             this.lblEnvContraEntrega.TabIndex = 4;
@@ -439,7 +439,7 @@
             // lblEnvSucDestino
             // 
             this.lblEnvSucDestino.AutoSize = true;
-            this.lblEnvSucDestino.Location = new System.Drawing.Point(8, 152);
+            this.lblEnvSucDestino.Location = new System.Drawing.Point(215, 66);
             this.lblEnvSucDestino.Name = "lblEnvSucDestino";
             this.lblEnvSucDestino.Size = new System.Drawing.Size(85, 19);
             this.lblEnvSucDestino.TabIndex = 6;
