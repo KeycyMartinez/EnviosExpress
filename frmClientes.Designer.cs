@@ -363,7 +363,7 @@
             this.cboDesZona.FormattingEnabled = true;
             this.cboDesZona.Location = new System.Drawing.Point(206, 104);
             this.cboDesZona.Name = "cboDesZona";
-            this.cboDesZona.Size = new System.Drawing.Size(168, 25);
+            this.cboDesZona.Size = new System.Drawing.Size(173, 25);
             this.cboDesZona.TabIndex = 18;
             // 
             // chkDesActivo
@@ -382,7 +382,7 @@
             // 
             this.txtDesDireccion.Location = new System.Drawing.Point(207, 165);
             this.txtDesDireccion.Name = "txtDesDireccion";
-            this.txtDesDireccion.Size = new System.Drawing.Size(167, 25);
+            this.txtDesDireccion.Size = new System.Drawing.Size(172, 25);
             this.txtDesDireccion.TabIndex = 16;
             // 
             // txtDesApellido

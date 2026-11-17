@@ -194,7 +194,7 @@
             this.grpPaquetes.Controls.Add(this.lblPaqValor);
             this.grpPaquetes.Controls.Add(this.lblPaqPeso);
             this.grpPaquetes.Controls.Add(this.lblPaqDescripcion);
-            this.grpPaquetes.Location = new System.Drawing.Point(463, 9);
+            this.grpPaquetes.Location = new System.Drawing.Point(649, 9);
             this.grpPaquetes.Name = "grpPaquetes";
             this.grpPaquetes.Size = new System.Drawing.Size(372, 316);
             this.grpPaquetes.TabIndex = 22;
@@ -330,7 +330,7 @@
             this.grpDatosEnvio.Controls.Add(this.cboEnvRemitente);
             this.grpDatosEnvio.Location = new System.Drawing.Point(15, 9);
             this.grpDatosEnvio.Name = "grpDatosEnvio";
-            this.grpDatosEnvio.Size = new System.Drawing.Size(429, 316);
+            this.grpDatosEnvio.Size = new System.Drawing.Size(616, 316);
             this.grpDatosEnvio.TabIndex = 21;
             this.grpDatosEnvio.TabStop = false;
             this.grpDatosEnvio.Text = "Datos del envío";
@@ -358,7 +358,7 @@
             this.cboEnvSucOrigen.FormattingEnabled = true;
             this.cboEnvSucOrigen.Location = new System.Drawing.Point(88, 66);
             this.cboEnvSucOrigen.Name = "cboEnvSucOrigen";
-            this.cboEnvSucOrigen.Size = new System.Drawing.Size(121, 25);
+            this.cboEnvSucOrigen.Size = new System.Drawing.Size(207, 25);
             this.cboEnvSucOrigen.TabIndex = 10;
             this.cboEnvSucOrigen.SelectedIndexChanged += new System.EventHandler(this.cboEnvSucOrigen_SelectedIndexChanged);
             // 
@@ -374,7 +374,7 @@
             // lblEnvDestinatario
             // 
             this.lblEnvDestinatario.AutoSize = true;
-            this.lblEnvDestinatario.Location = new System.Drawing.Point(215, 30);
+            this.lblEnvDestinatario.Location = new System.Drawing.Point(300, 30);
             this.lblEnvDestinatario.Name = "lblEnvDestinatario";
             this.lblEnvDestinatario.Size = new System.Drawing.Size(86, 19);
             this.lblEnvDestinatario.TabIndex = 2;
@@ -390,7 +390,7 @@
             // lblEnvSucOrigen
             // 
             this.lblEnvSucOrigen.AutoSize = true;
-            this.lblEnvSucOrigen.Location = new System.Drawing.Point(7, 69);
+            this.lblEnvSucOrigen.Location = new System.Drawing.Point(7, 68);
             this.lblEnvSucOrigen.Name = "lblEnvSucOrigen";
             this.lblEnvSucOrigen.Size = new System.Drawing.Size(79, 19);
             this.lblEnvSucOrigen.TabIndex = 3;
@@ -433,15 +433,15 @@
             // cboEnvSucDestino
             // 
             this.cboEnvSucDestino.FormattingEnabled = true;
-            this.cboEnvSucDestino.Location = new System.Drawing.Point(302, 65);
+            this.cboEnvSucDestino.Location = new System.Drawing.Point(387, 65);
             this.cboEnvSucDestino.Name = "cboEnvSucDestino";
-            this.cboEnvSucDestino.Size = new System.Drawing.Size(121, 25);
+            this.cboEnvSucDestino.Size = new System.Drawing.Size(203, 25);
             this.cboEnvSucDestino.TabIndex = 11;
             // 
             // lblEnvSucDestino
             // 
             this.lblEnvSucDestino.AutoSize = true;
-            this.lblEnvSucDestino.Location = new System.Drawing.Point(215, 66);
+            this.lblEnvSucDestino.Location = new System.Drawing.Point(300, 66);
             this.lblEnvSucDestino.Name = "lblEnvSucDestino";
             this.lblEnvSucDestino.Size = new System.Drawing.Size(85, 19);
             this.lblEnvSucDestino.TabIndex = 6;
@@ -459,9 +459,9 @@
             // cboEnvDestinatario
             // 
             this.cboEnvDestinatario.FormattingEnabled = true;
-            this.cboEnvDestinatario.Location = new System.Drawing.Point(302, 30);
+            this.cboEnvDestinatario.Location = new System.Drawing.Point(387, 30);
             this.cboEnvDestinatario.Name = "cboEnvDestinatario";
-            this.cboEnvDestinatario.Size = new System.Drawing.Size(121, 25);
+            this.cboEnvDestinatario.Size = new System.Drawing.Size(203, 25);
             this.cboEnvDestinatario.TabIndex = 9;
             this.cboEnvDestinatario.SelectedIndexChanged += new System.EventHandler(this.cboEnvDestinatario_SelectedIndexChanged);
             // 
@@ -470,7 +470,7 @@
             this.cboEnvRemitente.FormattingEnabled = true;
             this.cboEnvRemitente.Location = new System.Drawing.Point(88, 30);
             this.cboEnvRemitente.Name = "cboEnvRemitente";
-            this.cboEnvRemitente.Size = new System.Drawing.Size(121, 25);
+            this.cboEnvRemitente.Size = new System.Drawing.Size(207, 25);
             this.cboEnvRemitente.TabIndex = 8;
             // 
             // tabEnviosRegistrados
