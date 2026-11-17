@@ -108,6 +108,11 @@ namespace EnviosExpress
                     da.Fill(dt);
 
                     dgvBitacora.DataSource = dt;
+
+                     if (!string.IsNullOrWhiteSpace(usuario) && dt.Rows.Count == 0)
+                     {
+                         MessageBox.Show("No se encontraron registros para el usuario indicado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     }
                 }
             }
             catch (Exception ex)

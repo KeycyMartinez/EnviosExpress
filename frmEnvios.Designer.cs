@@ -360,6 +360,7 @@
             this.cboEnvSucOrigen.Name = "cboEnvSucOrigen";
             this.cboEnvSucOrigen.Size = new System.Drawing.Size(121, 25);
             this.cboEnvSucOrigen.TabIndex = 10;
+            this.cboEnvSucOrigen.SelectedIndexChanged += new System.EventHandler(this.cboEnvSucOrigen_SelectedIndexChanged);
             // 
             // lblEnvRemitente
             // 

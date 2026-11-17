@@ -32,19 +32,21 @@ namespace EnviosExpress
 
         public DataTable ObtenerDestinatariosActivos()
         {
-            return ConsultarTabla("SELECT d.IdDestinatario, d.Nombre + ' ' + d.Apellido + ' - ' + z.Nombre AS Destinatario, z.TarifaBase " +
+            return ConsultarTabla("SELECT d.IdDestinatario, d.Nombre + ' ' + d.Apellido + ' - ' + z.Nombre AS Destinatario, z.TarifaBase, z.Provincia " +
                                   "FROM Destinatarios d INNER JOIN Zonas z ON z.IdZona = d.IdZona " +
                                   "WHERE d.Activo = 1 ORDER BY d.Apellido, d.Nombre");
         }
 
         public DataTable ObtenerSucursalesActivas()
         {
-            return ConsultarTabla("SELECT IdSucursal, Nombre AS Sucursal FROM Sucursales WHERE Activa = 1 ORDER BY Nombre");
+            return ConsultarTabla("SELECT s.IdSucursal, s.Nombre AS Sucursal, z.Provincia " +
+                                  "FROM Sucursales s INNER JOIN Zonas z ON z.IdZona = s.IdZona " +
+                                  "WHERE s.Activa = 1 ORDER BY s.Nombre");
         }
 
         public DataTable ObtenerServiciosActivos()
         {
-            return ConsultarTabla("SELECT IdServicio, Nombre + ' - ' + CAST(DiasEstimados AS VARCHAR(3)) + ' dias' AS Servicio, PrecioPorKg " +
+            return ConsultarTabla("SELECT IdServicio, Nombre + ' - ' + CAST(DiasEstimados AS VARCHAR(3)) + ' dias' AS Servicio, PrecioPorKg, DiasEstimados " +
                                   "FROM TiposServicio WHERE Activo = 1 ORDER BY PrecioPorKg");
         }
 
@@ -134,8 +136,8 @@ namespace EnviosExpress
             }
             catch
             {
-                tx.Rollback();   // si algo falló, se deshace todo
-                throw;           // y el error sube al formulario
+                tx.Rollback();   
+                throw;           
             }
             finally
             {
@@ -162,7 +164,7 @@ namespace EnviosExpress
                 if (filas == 0)
                 {
                     tx.Rollback();
-                    return false;   // el envío ya no estaba en estado "Registrado"
+                    return false;   
                 }
 
                 string sqlSeg = "INSERT INTO SeguimientoEnvio (IdEnvio, Estado, IdUsuario, Nota) " +

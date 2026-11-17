@@ -89,8 +89,15 @@ namespace EnviosExpress
         {
             try
             {
-                dgvRemitentes.DataSource = remitentesBD.ObtenerTabla(txtRemBuscar.Text.Trim());
+                string filtro = txtRemBuscar.Text.Trim();
+                DataTable tabla = remitentesBD.ObtenerTabla(filtro);
+                dgvRemitentes.DataSource = tabla;
                 dgvRemitentes.Columns["IdRemitente"].Visible = false;
+
+                if (!string.IsNullOrWhiteSpace(filtro) && tabla.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron remitentes que coincidan con la búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -277,9 +284,16 @@ namespace EnviosExpress
         {
             try
             {
-                dgvDestinatarios.DataSource = destinatariosBD.ObtenerTabla(txtDesBuscar.Text.Trim());
+                string filtro = txtDesBuscar.Text.Trim();
+                DataTable tabla = destinatariosBD.ObtenerTabla(filtro);
+                dgvDestinatarios.DataSource = tabla;
                 dgvDestinatarios.Columns["IdDestinatario"].Visible = false;
                 dgvDestinatarios.Columns["IdZona"].Visible = false;
+
+                if (!string.IsNullOrWhiteSpace(filtro) && tabla.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron destinatarios que coincidan con la búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {

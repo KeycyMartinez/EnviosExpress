@@ -27,6 +27,7 @@ namespace EnviosExpress
             txtNombreCompleto.MaxLength = 80;
             txtUsuario.MaxLength = 30;
             txtPassword.MaxLength = 50;
+            txtBuscar.MaxLength = 50;
 
             dgvUsuarios.ReadOnly = true;
             dgvUsuarios.AllowUserToAddRows = false;
@@ -58,15 +59,25 @@ namespace EnviosExpress
 
                 string query = "SELECT IdUsuario AS [Id], NombreCompleto AS [Nombre], NombreUsuario AS [Usuario], " +
                                "Rol, Activo " +
-                               "FROM Usuarios ORDER BY NombreUsuario";
+                               "FROM Usuarios " +
+                               "WHERE NombreUsuario LIKE @filtro OR NombreCompleto LIKE @filtro OR Rol LIKE @filtro " +
+                               "ORDER BY NombreUsuario";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
+                    string filtro = txtBuscar.Text.Trim();
+                    cmd.Parameters.Add("@filtro", SqlDbType.VarChar, 100).Value = "%" + filtro + "%";
+
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dgvUsuarios.DataSource = dt;
                     dgvUsuarios.Columns["Id"].Visible = false;
+
+                    if (!string.IsNullOrWhiteSpace(filtro) && dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron usuarios que coincidan con la búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -301,7 +312,7 @@ namespace EnviosExpress
             }
             catch (SqlException ex)
             {
-                MostrarErrorBD(ex);   // el error 547 explica que debe desactivarlo en lugar de eliminarlo
+                MostrarErrorBD(ex);   
             }
             catch (Exception ex)
             {
@@ -316,6 +327,11 @@ namespace EnviosExpress
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            ListarUsuarios();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -333,7 +349,7 @@ namespace EnviosExpress
             txtUsuario.Text = fila.Cells["Usuario"].Value.ToString();
             cmbRol.SelectedItem = fila.Cells["Rol"].Value.ToString();
             chkActivo.Checked = Convert.ToBoolean(fila.Cells["Activo"].Value);
-            txtPassword.Clear();   // la contraseña nunca se muestra
+            txtPassword.Clear();   
 
             btnAgregar.Enabled = false;
             btnModificar.Enabled = true;

@@ -153,13 +153,61 @@ namespace EnviosExpress
         private void cboEnvDestinatario_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cargando) return;
+            RevisarServicioDisponible();
             RecalcularCosto();
         }
 
         private void cboEnvServicio_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cargando) return;
+            RevisarServicioDisponible();
             RecalcularCosto();
+        }
+
+        private void cboEnvSucOrigen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cargando) return;
+            RevisarServicioDisponible();
+        }
+
+        
+        private bool ServicioDisponible(out string mensaje)
+        {
+            mensaje = "";
+
+            DataRowView origen = cboEnvSucOrigen.SelectedItem as DataRowView;
+            DataRowView destinatario = cboEnvDestinatario.SelectedItem as DataRowView;
+            DataRowView servicio = cboEnvServicio.SelectedItem as DataRowView;
+
+            if (origen == null || destinatario == null || servicio == null)
+            {
+                return true;
+            }
+
+            bool esMismoDia = Convert.ToInt32(servicio["DiasEstimados"]) == 0;
+            string provinciaOrigen = origen["Provincia"].ToString();
+            string provinciaDestino = destinatario["Provincia"].ToString();
+
+            if (esMismoDia && !string.Equals(provinciaOrigen, provinciaDestino, StringComparison.OrdinalIgnoreCase))
+            {
+                mensaje = "El servicio de entrega el mismo día solo está disponible dentro de la misma provincia.\n\n" +
+                          "Provincia de origen: " + provinciaOrigen + "\n" +
+                          "Provincia de destino: " + provinciaDestino + "\n\n" +
+                          "Elija otro servicio.";
+                return false;
+            }
+
+            return true;
+        }
+
+        private void RevisarServicioDisponible()
+        {
+            string mensaje;
+            if (!ServicioDisponible(out mensaje))
+            {
+                MessageBox.Show(mensaje, "Servicio no disponible", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboEnvServicio.SelectedIndex = -1;
+            }
         }
 
 
@@ -243,6 +291,13 @@ namespace EnviosExpress
                 return false;
             }
 
+            string mensajeServicio;
+            if (!ServicioDisponible(out mensajeServicio))
+            {
+                MessageBox.Show(mensajeServicio, "Servicio no disponible", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
 
@@ -291,8 +346,15 @@ namespace EnviosExpress
 
             try
             {
-                dgvEnvios.DataSource = enviosBD.ObtenerPanel(txtEnvBuscar.Text.Trim());
+                string filtro = txtEnvBuscar.Text.Trim();
+                DataTable tabla = enviosBD.ObtenerPanel(filtro);
+                dgvEnvios.DataSource = tabla;
                 dgvEnvios.Columns["IdEnvio"].Visible = false;
+
+                if (!string.IsNullOrWhiteSpace(filtro) && tabla.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron envíos que coincidan con la búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
