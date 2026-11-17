@@ -56,7 +56,7 @@
             // 
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.Location = new System.Drawing.Point(213, 58);
+            this.lblBienvenida.Location = new System.Drawing.Point(189, 41);
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(124, 25);
             this.lblBienvenida.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.btnSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguimiento.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeguimiento.ForeColor = System.Drawing.Color.White;
-            this.btnSeguimiento.Location = new System.Drawing.Point(173, 372);
+            this.btnSeguimiento.Location = new System.Drawing.Point(173, 310);
             this.btnSeguimiento.Name = "btnSeguimiento";
             this.btnSeguimiento.Size = new System.Drawing.Size(181, 53);
             this.btnSeguimiento.TabIndex = 5;
@@ -84,7 +84,7 @@
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(444, 372);
+            this.btnReportes.Location = new System.Drawing.Point(444, 310);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(181, 53);
             this.btnReportes.TabIndex = 6;
@@ -99,7 +99,7 @@
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(173, 543);
+            this.btnUsuarios.Location = new System.Drawing.Point(173, 460);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(181, 53);
             this.btnUsuarios.TabIndex = 7;
@@ -114,7 +114,7 @@
             this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBitacora.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBitacora.ForeColor = System.Drawing.Color.White;
-            this.btnBitacora.Location = new System.Drawing.Point(444, 543);
+            this.btnBitacora.Location = new System.Drawing.Point(444, 460);
             this.btnBitacora.Name = "btnBitacora";
             this.btnBitacora.Size = new System.Drawing.Size(181, 53);
             this.btnBitacora.TabIndex = 8;
@@ -152,7 +152,7 @@
             this.btnEnvios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnvios.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnvios.ForeColor = System.Drawing.Color.White;
-            this.btnEnvios.Location = new System.Drawing.Point(444, 200);
+            this.btnEnvios.Location = new System.Drawing.Point(444, 160);
             this.btnEnvios.Name = "btnEnvios";
             this.btnEnvios.Size = new System.Drawing.Size(181, 53);
             this.btnEnvios.TabIndex = 4;
@@ -167,7 +167,7 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Location = new System.Drawing.Point(173, 200);
+            this.btnClientes.Location = new System.Drawing.Point(173, 160);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(181, 53);
             this.btnClientes.TabIndex = 2;
@@ -178,9 +178,9 @@
             // picClientes
             // 
             this.picClientes.Image = ((System.Drawing.Image)(resources.GetObject("picClientes.Image")));
-            this.picClientes.Location = new System.Drawing.Point(205, 96);
+            this.picClientes.Location = new System.Drawing.Point(213, 80);
             this.picClientes.Name = "picClientes";
-            this.picClientes.Size = new System.Drawing.Size(120, 98);
+            this.picClientes.Size = new System.Drawing.Size(100, 75);
             this.picClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picClientes.TabIndex = 11;
             this.picClientes.TabStop = false;
@@ -188,9 +188,9 @@
             // picEnvios
             // 
             this.picEnvios.Image = ((System.Drawing.Image)(resources.GetObject("picEnvios.Image")));
-            this.picEnvios.Location = new System.Drawing.Point(475, 96);
+            this.picEnvios.Location = new System.Drawing.Point(484, 80);
             this.picEnvios.Name = "picEnvios";
-            this.picEnvios.Size = new System.Drawing.Size(120, 98);
+            this.picEnvios.Size = new System.Drawing.Size(100, 75);
             this.picEnvios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEnvios.TabIndex = 12;
             this.picEnvios.TabStop = false;
@@ -198,9 +198,9 @@
             // picSeguimiento
             // 
             this.picSeguimiento.Image = ((System.Drawing.Image)(resources.GetObject("picSeguimiento.Image")));
-            this.picSeguimiento.Location = new System.Drawing.Point(205, 268);
+            this.picSeguimiento.Location = new System.Drawing.Point(213, 230);
             this.picSeguimiento.Name = "picSeguimiento";
-            this.picSeguimiento.Size = new System.Drawing.Size(120, 98);
+            this.picSeguimiento.Size = new System.Drawing.Size(100, 75);
             this.picSeguimiento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSeguimiento.TabIndex = 13;
             this.picSeguimiento.TabStop = false;
@@ -208,9 +208,9 @@
             // picReportes
             // 
             this.picReportes.Image = ((System.Drawing.Image)(resources.GetObject("picReportes.Image")));
-            this.picReportes.Location = new System.Drawing.Point(475, 268);
+            this.picReportes.Location = new System.Drawing.Point(484, 230);
             this.picReportes.Name = "picReportes";
-            this.picReportes.Size = new System.Drawing.Size(120, 98);
+            this.picReportes.Size = new System.Drawing.Size(100, 75);
             this.picReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picReportes.TabIndex = 14;
             this.picReportes.TabStop = false;
@@ -218,9 +218,9 @@
             // picBitacora
             // 
             this.picBitacora.Image = ((System.Drawing.Image)(resources.GetObject("picBitacora.Image")));
-            this.picBitacora.Location = new System.Drawing.Point(475, 440);
+            this.picBitacora.Location = new System.Drawing.Point(484, 380);
             this.picBitacora.Name = "picBitacora";
-            this.picBitacora.Size = new System.Drawing.Size(120, 97);
+            this.picBitacora.Size = new System.Drawing.Size(100, 75);
             this.picBitacora.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBitacora.TabIndex = 15;
             this.picBitacora.TabStop = false;
@@ -228,9 +228,9 @@
             // picUsuarios
             // 
             this.picUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("picUsuarios.Image")));
-            this.picUsuarios.Location = new System.Drawing.Point(205, 439);
+            this.picUsuarios.Location = new System.Drawing.Point(213, 380);
             this.picUsuarios.Name = "picUsuarios";
-            this.picUsuarios.Size = new System.Drawing.Size(120, 98);
+            this.picUsuarios.Size = new System.Drawing.Size(100, 75);
             this.picUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picUsuarios.TabIndex = 16;
             this.picUsuarios.TabStop = false;
