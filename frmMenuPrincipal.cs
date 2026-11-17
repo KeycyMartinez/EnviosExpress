@@ -50,6 +50,8 @@ namespace EnviosExpress
             bool esAdmin = Sesion.Rol == "Admin";
             btnUsuarios.Visible = esAdmin;
             btnBitacora.Visible = esAdmin;
+            pictureBox6.Visible = esAdmin;
+            pictureBox5.Visible = esAdmin;
         }
 
         private void AbrirFormulario(Form frm)
