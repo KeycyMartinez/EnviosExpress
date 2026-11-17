@@ -42,14 +42,14 @@
             this.picEnvios = new System.Windows.Forms.PictureBox();
             this.picSeguimiento = new System.Windows.Forms.PictureBox();
             this.picReportes = new System.Windows.Forms.PictureBox();
-            this.picUsuarios = new System.Windows.Forms.PictureBox();
             this.picBitacora = new System.Windows.Forms.PictureBox();
+            this.picUsuarios = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnvios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSeguimiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReportes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBitacora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBienvenida
@@ -177,7 +177,7 @@
             // 
             // picClientes
             // 
-            this.picClientes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.picClientes.Image = ((System.Drawing.Image)(resources.GetObject("picClientes.Image")));
             this.picClientes.Location = new System.Drawing.Point(205, 96);
             this.picClientes.Name = "picClientes";
             this.picClientes.Size = new System.Drawing.Size(120, 98);
@@ -187,7 +187,7 @@
             // 
             // picEnvios
             // 
-            this.picEnvios.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.picEnvios.Image = ((System.Drawing.Image)(resources.GetObject("picEnvios.Image")));
             this.picEnvios.Location = new System.Drawing.Point(475, 96);
             this.picEnvios.Name = "picEnvios";
             this.picEnvios.Size = new System.Drawing.Size(120, 98);
@@ -197,7 +197,7 @@
             // 
             // picSeguimiento
             // 
-            this.picSeguimiento.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.picSeguimiento.Image = ((System.Drawing.Image)(resources.GetObject("picSeguimiento.Image")));
             this.picSeguimiento.Location = new System.Drawing.Point(205, 268);
             this.picSeguimiento.Name = "picSeguimiento";
             this.picSeguimiento.Size = new System.Drawing.Size(120, 98);
@@ -207,7 +207,7 @@
             // 
             // picReportes
             // 
-            this.picReportes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.picReportes.Image = ((System.Drawing.Image)(resources.GetObject("picReportes.Image")));
             this.picReportes.Location = new System.Drawing.Point(475, 268);
             this.picReportes.Name = "picReportes";
             this.picReportes.Size = new System.Drawing.Size(120, 98);
@@ -215,25 +215,25 @@
             this.picReportes.TabIndex = 14;
             this.picReportes.TabStop = false;
             // 
-            // picUsuarios
-            // 
-            this.picUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.picUsuarios.Location = new System.Drawing.Point(475, 440);
-            this.picUsuarios.Name = "picUsuarios";
-            this.picUsuarios.Size = new System.Drawing.Size(120, 97);
-            this.picUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUsuarios.TabIndex = 15;
-            this.picUsuarios.TabStop = false;
-            // 
             // picBitacora
             // 
-            this.picBitacora.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.picBitacora.Location = new System.Drawing.Point(205, 439);
+            this.picBitacora.Image = ((System.Drawing.Image)(resources.GetObject("picBitacora.Image")));
+            this.picBitacora.Location = new System.Drawing.Point(475, 440);
             this.picBitacora.Name = "picBitacora";
-            this.picBitacora.Size = new System.Drawing.Size(120, 98);
+            this.picBitacora.Size = new System.Drawing.Size(120, 97);
             this.picBitacora.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBitacora.TabIndex = 16;
+            this.picBitacora.TabIndex = 15;
             this.picBitacora.TabStop = false;
+            // 
+            // picUsuarios
+            // 
+            this.picUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("picUsuarios.Image")));
+            this.picUsuarios.Location = new System.Drawing.Point(205, 439);
+            this.picUsuarios.Name = "picUsuarios";
+            this.picUsuarios.Size = new System.Drawing.Size(120, 98);
+            this.picUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUsuarios.TabIndex = 16;
+            this.picUsuarios.TabStop = false;
             // 
             // frmMenuPrincipal
             // 
@@ -241,8 +241,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 611);
-            this.Controls.Add(this.picBitacora);
             this.Controls.Add(this.picUsuarios);
+            this.Controls.Add(this.picBitacora);
             this.Controls.Add(this.picReportes);
             this.Controls.Add(this.picSeguimiento);
             this.Controls.Add(this.picEnvios);
@@ -264,8 +264,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnvios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSeguimiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReportes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBitacora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +285,7 @@
         private System.Windows.Forms.PictureBox picEnvios;
         private System.Windows.Forms.PictureBox picSeguimiento;
         private System.Windows.Forms.PictureBox picReportes;
-        private System.Windows.Forms.PictureBox picUsuarios;
         private System.Windows.Forms.PictureBox picBitacora;
+        private System.Windows.Forms.PictureBox picUsuarios;
     }
 }
